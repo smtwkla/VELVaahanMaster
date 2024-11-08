@@ -2,3 +2,4 @@
 .idea
 secrets.py
 toolchain
+__pycache__
