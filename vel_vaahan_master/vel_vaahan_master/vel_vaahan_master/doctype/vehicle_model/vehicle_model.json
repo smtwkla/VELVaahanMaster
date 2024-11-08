@@ -1,0 +1,202 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:model",
+ "creation": "2024-11-08 07:22:50.166905",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_ohu6",
+  "model",
+  "manufacturer",
+  "category",
+  "num_passengers",
+  "is_gcv",
+  "specifications_section",
+  "emission_standard",
+  "gvw",
+  "payload",
+  "engine_type",
+  "engine_model",
+  "engine_cc",
+  "engine_power_hp",
+  "engine_nominal_rpm",
+  "transmission",
+  "drive_type",
+  "is_power_steering",
+  "clutch_type",
+  "suspension",
+  "wheelbase",
+  "length",
+  "height",
+  "cargo_deck_size",
+  "other_specifications"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_ohu6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "model",
+   "fieldtype": "Data",
+   "label": "Model Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "manufacturer",
+   "fieldtype": "Link",
+   "label": "Manufacturer",
+   "options": "Vehicle Manufacturer"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Category",
+   "options": "Car\nTwo Wheeler\nBus\nPassenger Van\nLCV Three Wheeler\nLCV Four Wheeler\nHCV\nHCV Tipper\nTractor\nForklift Truck\nEarth Mover",
+   "reqd": 1
+  },
+  {
+   "fieldname": "engine_type",
+   "fieldtype": "Select",
+   "label": "Engine Type",
+   "options": "Diesel IC\nPetrol IC\nElectric\nHybrid Diesel\nHybrid Petrol",
+   "reqd": 1
+  },
+  {
+   "fieldname": "num_passengers",
+   "fieldtype": "Int",
+   "label": "Number of Passengers"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_gcv",
+   "fieldtype": "Check",
+   "label": "Is Goods Carrying Vehicle?"
+  },
+  {
+   "fieldname": "specifications_section",
+   "fieldtype": "Section Break",
+   "label": "Specifications"
+  },
+  {
+   "fieldname": "engine_model",
+   "fieldtype": "Data",
+   "label": "Engine Model"
+  },
+  {
+   "fieldname": "engine_cc",
+   "fieldtype": "Int",
+   "label": "Engine CC"
+  },
+  {
+   "fieldname": "engine_power_hp",
+   "fieldtype": "Data",
+   "label": "Engine Power HP"
+  },
+  {
+   "fieldname": "transmission",
+   "fieldtype": "Data",
+   "label": "Transmission"
+  },
+  {
+   "fieldname": "drive_type",
+   "fieldtype": "Select",
+   "label": "Drive Type",
+   "options": "Front Wheel Drive\nRear Wheel Drive\nFour Wheel Drive"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_power_steering",
+   "fieldtype": "Check",
+   "label": "Is Power Steering?"
+  },
+  {
+   "fieldname": "other_specifications",
+   "fieldtype": "Text Editor",
+   "label": "Other Specifications"
+  },
+  {
+   "description": "in Kg",
+   "fieldname": "gvw",
+   "fieldtype": "Int",
+   "label": "Gross Vehicle Weight"
+  },
+  {
+   "description": "in Kg",
+   "fieldname": "payload",
+   "fieldtype": "Int",
+   "label": "Rated Payload"
+  },
+  {
+   "fieldname": "engine_nominal_rpm",
+   "fieldtype": "Int",
+   "label": "Engine Nominal RPM"
+  },
+  {
+   "fieldname": "clutch_type",
+   "fieldtype": "Data",
+   "label": "Clutch Type"
+  },
+  {
+   "fieldname": "suspension",
+   "fieldtype": "Data",
+   "label": "Suspension"
+  },
+  {
+   "description": "in mm",
+   "fieldname": "wheelbase",
+   "fieldtype": "Int",
+   "label": "Wheelbase"
+  },
+  {
+   "fieldname": "length",
+   "fieldtype": "Int",
+   "label": "Overall Length"
+  },
+  {
+   "fieldname": "height",
+   "fieldtype": "Int",
+   "label": "Overall Height"
+  },
+  {
+   "description": "(LxBxH) in mm",
+   "fieldname": "cargo_deck_size",
+   "fieldtype": "Data",
+   "label": "Cargo Deck Size"
+  },
+  {
+   "fieldname": "emission_standard",
+   "fieldtype": "Select",
+   "label": "Emission Standard",
+   "options": "BS VI\nBS VI\nOlder"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-11-08 07:51:09.075980",
+ "modified_by": "Administrator",
+ "module": "Vel Vaahan Master",
+ "name": "Vehicle Model",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "model"
+}
