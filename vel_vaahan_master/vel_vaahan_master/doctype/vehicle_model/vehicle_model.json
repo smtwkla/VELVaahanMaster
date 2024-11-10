@@ -9,28 +9,44 @@
   "section_break_ohu6",
   "model",
   "manufacturer",
+  "column_break_zmha",
+  "is_gcv",
   "category",
   "num_passengers",
-  "is_gcv",
   "specifications_section",
-  "emission_standard",
-  "gvw",
-  "payload",
   "engine_type",
   "engine_model",
   "engine_cc",
   "engine_power_hp",
   "engine_nominal_rpm",
-  "transmission",
-  "drive_type",
+  "engine_num_cylinders",
+  "emission_standard",
+  "column_break_eqbu",
   "is_power_steering",
   "clutch_type",
+  "transmission",
+  "drive_type",
+  "num_of_axle",
   "suspension",
+  "weight_details_section",
+  "uvw",
+  "gvw",
+  "column_break_hyax",
+  "payload",
+  "gcw",
+  "vehicle_dimensions_section",
   "wheelbase",
-  "length",
   "height",
+  "length",
+  "column_break_bsjk",
   "cargo_deck_size",
-  "other_specifications"
+  "other_details_section",
+  "other_specifications",
+  "model_picture",
+  "status_section",
+  "insurance_status",
+  "maintenance_status",
+  "fc_status"
  ],
  "fields": [
   {
@@ -65,20 +81,21 @@
    "reqd": 1
   },
   {
+   "description": "(in all) Including driver",
    "fieldname": "num_passengers",
    "fieldtype": "Int",
-   "label": "Number of Passengers"
+   "label": "Seating"
   },
   {
    "default": "0",
    "fieldname": "is_gcv",
    "fieldtype": "Check",
-   "label": "Is Goods Carrying Vehicle?"
+   "label": "Is Goods Carrier?"
   },
   {
    "fieldname": "specifications_section",
    "fieldtype": "Section Break",
-   "label": "Specifications"
+   "label": "Power Train Specifications"
   },
   {
    "fieldname": "engine_model",
@@ -115,13 +132,12 @@
   {
    "fieldname": "other_specifications",
    "fieldtype": "Text Editor",
-   "label": "Other Specifications"
+   "label": "Remarks"
   },
   {
-   "description": "in Kg",
    "fieldname": "gvw",
-   "fieldtype": "Int",
-   "label": "Gross Vehicle Weight"
+   "fieldtype": "Data",
+   "label": "Gross (Laden) Vehicle Weight"
   },
   {
    "description": "in Kg",
@@ -171,11 +187,92 @@
    "fieldtype": "Select",
    "label": "Emission Standard",
    "options": "BS VI\nBS VI\nOlder"
+  },
+  {
+   "fieldname": "engine_num_cylinders",
+   "fieldtype": "Int",
+   "label": "Engine Number of Cylinders"
+  },
+  {
+   "fieldname": "num_of_axle",
+   "fieldtype": "Int",
+   "label": "Number of Axle"
+  },
+  {
+   "fieldname": "weight_details_section",
+   "fieldtype": "Section Break",
+   "label": "Weight Details"
+  },
+  {
+   "fieldname": "vehicle_dimensions_section",
+   "fieldtype": "Section Break",
+   "label": "Vehicle Dimensions"
+  },
+  {
+   "fieldname": "column_break_zmha",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_eqbu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_hyax",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_bsjk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "other_details_section",
+   "fieldtype": "Section Break",
+   "label": "Other Details"
+  },
+  {
+   "description": "in Kg",
+   "fieldname": "uvw",
+   "fieldtype": "Int",
+   "label": "Unladen Vehicle Weight"
+  },
+  {
+   "fieldname": "gcw",
+   "fieldtype": "Int",
+   "label": "Gross Combination Weight"
+  },
+  {
+   "fieldname": "model_picture",
+   "fieldtype": "Attach Image",
+   "label": "Model Picture"
+  },
+  {
+   "fieldname": "status_section",
+   "fieldtype": "Section Break",
+   "label": "Status"
+  },
+  {
+   "fieldname": "insurance_status",
+   "fieldtype": "Data",
+   "label": "Insurance Status",
+   "read_only": 1
+  },
+  {
+   "fieldname": "maintenance_status",
+   "fieldtype": "Data",
+   "label": "Maintenance Status",
+   "read_only": 1
+  },
+  {
+   "fieldname": "fc_status",
+   "fieldtype": "Data",
+   "label": "FC Status",
+   "read_only": 1
   }
  ],
+ "image_field": "model_picture",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-08 07:51:09.075980",
+ "modified": "2024-11-10 23:04:19.761829",
  "modified_by": "Administrator",
  "module": "Vel Vaahan Master",
  "name": "Vehicle Model",

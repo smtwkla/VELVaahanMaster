@@ -9,7 +9,9 @@
   "section_break_zl8l",
   "vendor",
   "address",
-  "contact"
+  "contact",
+  "is_seller",
+  "is_service_provider"
  ],
  "fields": [
   {
@@ -33,11 +35,23 @@
    "label": "Vendor Name",
    "reqd": 1,
    "unique": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_seller",
+   "fieldtype": "Check",
+   "label": "Is Vehicle Seller"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_service_provider",
+   "fieldtype": "Check",
+   "label": "Is Service Provider"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-08 08:05:22.940952",
+ "modified": "2024-11-10 23:21:07.287956",
  "modified_by": "Administrator",
  "module": "Vel Vaahan Master",
  "name": "Vehicle Vendor",

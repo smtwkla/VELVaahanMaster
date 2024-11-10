@@ -1,0 +1,110 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{vaahan} - {from_date}",
+ "creation": "2024-11-10 10:54:52.850421",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_g60r",
+  "vaahan",
+  "insurer",
+  "policy_number",
+  "from_date",
+  "till_date",
+  "agent",
+  "coverage_details",
+  "idv",
+  "premium",
+  "payment"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_g60r",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "vaahan",
+   "fieldtype": "Link",
+   "label": "Vaahan",
+   "options": "Vaahan",
+   "reqd": 1
+  },
+  {
+   "fieldname": "insurer",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Insurer"
+  },
+  {
+   "fieldname": "policy_number",
+   "fieldtype": "Data",
+   "label": "Policy Number"
+  },
+  {
+   "fieldname": "agent",
+   "fieldtype": "Data",
+   "label": "Agent"
+  },
+  {
+   "fieldname": "coverage_details",
+   "fieldtype": "Small Text",
+   "label": "Coverage Details"
+  },
+  {
+   "fieldname": "premium",
+   "fieldtype": "Currency",
+   "label": "Premium Amount"
+  },
+  {
+   "fieldname": "payment",
+   "fieldtype": "Data",
+   "label": "Payment Details"
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Insurance From",
+   "reqd": 1
+  },
+  {
+   "fieldname": "till_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Insurance Till",
+   "reqd": 1
+  },
+  {
+   "fieldname": "idv",
+   "fieldtype": "Currency",
+   "label": "Insured Declared Value"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-11-10 22:54:29.429648",
+ "modified_by": "Administrator",
+ "module": "Vel Vaahan Master",
+ "name": "Vehicle Insurance Policy",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

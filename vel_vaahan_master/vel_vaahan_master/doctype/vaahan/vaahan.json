@@ -1,0 +1,194 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{registration} - {model}",
+ "creation": "2024-11-08 07:52:30.741522",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_llgz",
+  "registration",
+  "model",
+  "chassis_number",
+  "engine_number",
+  "color",
+  "current_owner",
+  "is_in_use",
+  "registration_details_section",
+  "date_of_registration",
+  "registration_valid_till",
+  "owner_name_in_rc",
+  "owner_sdw_of",
+  "owner_address_in_rc",
+  "finance_details",
+  "purchase_details_section",
+  "supplier",
+  "date_of_purchase",
+  "purchase_invoice",
+  "other_section",
+  "disposal_details",
+  "manufacture_mon_yr",
+  "status_section",
+  "fc_valid_till",
+  "fc_insp_due"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_llgz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "registration",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Registration Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "model",
+   "fieldtype": "Link",
+   "label": "Model",
+   "options": "Vehicle Model"
+  },
+  {
+   "fieldname": "color",
+   "fieldtype": "Data",
+   "label": "Color"
+  },
+  {
+   "fieldname": "current_owner",
+   "fieldtype": "Data",
+   "label": "Current Owner"
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Supplier",
+   "options": "Vehicle Vendor"
+  },
+  {
+   "fieldname": "date_of_purchase",
+   "fieldtype": "Date",
+   "label": "Date of Purchase"
+  },
+  {
+   "fieldname": "purchase_invoice",
+   "fieldtype": "Data",
+   "label": "Purchase Invoice Details"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_in_use",
+   "fieldtype": "Check",
+   "label": "Is In Use"
+  },
+  {
+   "depends_on": "eval: !doc.is_in_use",
+   "fieldname": "disposal_details",
+   "fieldtype": "Data",
+   "label": "Disposal Details"
+  },
+  {
+   "fieldname": "chassis_number",
+   "fieldtype": "Data",
+   "label": "Chassis Number"
+  },
+  {
+   "fieldname": "engine_number",
+   "fieldtype": "Data",
+   "label": "Engine Number"
+  },
+  {
+   "fieldname": "registration_details_section",
+   "fieldtype": "Section Break",
+   "label": "Registration Details"
+  },
+  {
+   "fieldname": "date_of_registration",
+   "fieldtype": "Date",
+   "label": "Date of Registration"
+  },
+  {
+   "fieldname": "registration_valid_till",
+   "fieldtype": "Date",
+   "label": "Registration Valid Till"
+  },
+  {
+   "fieldname": "owner_name_in_rc",
+   "fieldtype": "Data",
+   "label": "Owner Name in RC"
+  },
+  {
+   "fieldname": "owner_sdw_of",
+   "fieldtype": "Data",
+   "label": "Owner Son/D/W Of"
+  },
+  {
+   "fieldname": "owner_address_in_rc",
+   "fieldtype": "Small Text",
+   "label": "Owner Address In RC"
+  },
+  {
+   "fieldname": "finance_details",
+   "fieldtype": "Data",
+   "label": "Finance Details"
+  },
+  {
+   "fieldname": "purchase_details_section",
+   "fieldtype": "Section Break",
+   "label": "Purchase Details"
+  },
+  {
+   "fieldname": "other_section",
+   "fieldtype": "Section Break",
+   "label": "Other"
+  },
+  {
+   "fieldname": "manufacture_mon_yr",
+   "fieldtype": "Data",
+   "label": "Month Year of Manufacture"
+  },
+  {
+   "fieldname": "status_section",
+   "fieldtype": "Section Break",
+   "label": "Status"
+  },
+  {
+   "fieldname": "fc_valid_till",
+   "fieldtype": "Date",
+   "label": "FC Valid Till",
+   "read_only": 1
+  },
+  {
+   "fieldname": "fc_insp_due",
+   "fieldtype": "Date",
+   "label": "FC Inspection Due date",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-11-11 00:22:20.223245",
+ "modified_by": "Administrator",
+ "module": "Vel Vaahan Master",
+ "name": "Vaahan",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
