@@ -1,6 +1,9 @@
 # Copyright (c) 2024, SMTW and contributors
 # For license information, please see license.txt
 
+import re
+from datetime import datetime
+
 import frappe
 from frappe.model.document import Document
 from frappe.utils import (getdate, add_months, today)
@@ -11,8 +14,21 @@ class Vaahan(Document):
 	def requires_permit(self):
 		return frappe.get_doc("Vehicle Model", self.model).permit_required
 
+
 	def requires_road_tax(self):
 		return frappe.get_doc("Vehicle Model", self.model).road_tax_required
+
+
+	def update_green_tax_applicability(self):
+		if not self.green_tax_applicable:
+			if self.manufacture_mon_yr:
+				mon = int(self.manufacture_mon_yr[0:2])
+				year = int(self.manufacture_mon_yr[3:])
+				age = (datetime.now() - datetime(year, mon, 1)).days / 365
+				if (self.registration_type == 'Commercial' and age > 8) or \
+						(self.registration_type == 'Personal' and age > 15) :
+					self.green_tax_applicable = True
+
 
 	def update_status(self):
 		status_txt = ""
@@ -48,9 +64,9 @@ class Vaahan(Document):
 			permit_status = None
 
 		if self.requires_road_tax():
-			if getdate(self.road_tax_valid_till) <= getdate(today()):
+			if (not self.road_tax_valid_till) or getdate(self.road_tax_valid_till) <= getdate(today()):
 				road_tax_status = "Urgent"
-				status_txt += "Road Tax validity expired. "
+				status_txt += "Road Tax validity expired / not available. "
 			elif getdate(self.road_tax_valid_till) <= getdate(add_months(today(), 1)):
 				road_tax_status = "Pending"
 				status_txt += "Road Tax validity expiring soon. "
@@ -59,9 +75,24 @@ class Vaahan(Document):
 		else:
 			road_tax_status = None
 
-		if fc_status == "Urgent" or insurance_status == "Urgent" or permit_status == "Urgent" or road_tax_status == "Urgent":
+		if self.green_tax_applicable:
+			if (not self.green_tax_valid_till) or getdate(self.green_tax_valid_till) <= getdate(today()):
+				green_tax_status = "Urgent"
+				status_txt += "Green Tax validity expired / not available. "
+			elif getdate(self.green_tax_valid_till) <= getdate(add_months(today(), 1)):
+				green_tax_status = "Pending"
+				status_txt += "Green Tax validity expiring soon. "
+			else:
+				green_tax_status = "OK"
+
+		else:
+			green_tax_status = None
+
+		if fc_status == "Urgent" or insurance_status == "Urgent" or permit_status == "Urgent" or \
+				road_tax_status == "Urgent" or green_tax_status == "Urgent":
 			self.status = "Urgent"
-		elif fc_status == "Pending" or insurance_status == "Pending" or permit_status == "Pending" or road_tax_status == "Pending":
+		elif fc_status == "Pending" or insurance_status == "Pending" or permit_status == "Pending" \
+				or road_tax_status == "Pending" or green_tax_status == "Pending":
 			self.status = "Pending"
 		else:
 			self.status = "OK"
@@ -117,5 +148,39 @@ class Vaahan(Document):
 		self.road_tax_valid_till = rt[0].till_date if rt else None
 		self.save()
 
+
+	def update_green_tax_details(self):
+		if self.green_tax_applicable:
+			gt = frappe.db.get_list(
+								'Vehicle Green Tax',
+			                    filters={'vaahan':self.name},
+								fields=['name','till_date'],
+			                    order_by='till_date desc',
+			                    limit=1
+			                   )
+			self.green_tax_valid_till = gt[0].till_date if gt else None
+		else:
+			self.green_tax_valid_till = None
+		self.save()
+
+
 	def before_save(self):
+		self.update_green_tax_applicability()
 		self.update_status()
+
+
+	def validate_mfr_date(self):
+		pattern = r"^(0[1-9]|1[0-2])-\d{4}$"
+
+		if not re.match(pattern, self.manufacture_mon_yr):
+			frappe.throw(f'Month-Year of Manufacture must be in mm-yyyy format.')
+
+
+	def validate(self):
+		self.validate_mfr_date()
+
+
+	def run_daily_scheduled_tasks(self):
+		self.update_green_tax_applicability()
+		self.update_status()
+		self.save()

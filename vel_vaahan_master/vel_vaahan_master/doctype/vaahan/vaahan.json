@@ -13,8 +13,10 @@
   "engine_number",
   "color",
   "column_break_esmk",
+  "registration_type",
   "current_owner",
   "permit_required",
+  "green_tax_applicable",
   "is_in_use",
   "registration_details_section",
   "date_of_registration",
@@ -40,7 +42,8 @@
   "column_break_vief",
   "insurance_valid_till",
   "permit_valid_till",
-  "road_tax_valid_till"
+  "road_tax_valid_till",
+  "green_tax_valid_till"
  ],
  "fields": [
   {
@@ -154,9 +157,11 @@
    "label": "Other"
   },
   {
+   "description": "mm-yyyy Format. (Ex: 11-2024)",
    "fieldname": "manufacture_mon_yr",
    "fieldtype": "Data",
-   "label": "Month Year of Manufacture"
+   "label": "Month-Year of Manufacture",
+   "reqd": 1
   },
   {
    "fieldname": "status_section",
@@ -207,7 +212,8 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "OK\nPending\nUrgent"
+   "options": "OK\nPending\nUrgent",
+   "read_only": 1
   },
   {
    "fieldname": "status_txt",
@@ -226,11 +232,30 @@
    "fieldtype": "Data",
    "label": "Road Tax Valid Till",
    "read_only": 1
+  },
+  {
+   "default": "Commercial",
+   "fieldname": "registration_type",
+   "fieldtype": "Select",
+   "label": "Registration Type",
+   "options": "Commercial\nPersonal",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "green_tax_applicable",
+   "fieldtype": "Check",
+   "label": "Green Tax Applicable"
+  },
+  {
+   "fieldname": "green_tax_valid_till",
+   "fieldtype": "Date",
+   "label": "Green Tax Valid Till"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-12 07:46:27.811201",
+ "modified": "2024-11-12 22:52:00.248467",
  "modified_by": "Administrator",
  "module": "VEL Vaahan Master",
  "name": "Vaahan",

@@ -148,13 +148,13 @@ app_license = "mit"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
+scheduler_events = {
 # 	"all": [
 # 		"vel_vaahan_master.tasks.all"
 # 	],
-# 	"daily": [
-# 		"vel_vaahan_master.tasks.daily"
-# 	],
+ 	"daily": [
+ 		"vel_vaahan_master.vel_vaahan_master.doctype.vaahan.tasks.daily"
+ 	],
 # 	"hourly": [
 # 		"vel_vaahan_master.tasks.hourly"
 # 	],
@@ -164,7 +164,7 @@ app_license = "mit"
 # 	"monthly": [
 # 		"vel_vaahan_master.tasks.monthly"
 # 	],
-# }
+}
 
 # Testing
 # -------

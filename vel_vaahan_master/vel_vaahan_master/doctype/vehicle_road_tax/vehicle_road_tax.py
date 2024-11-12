@@ -25,6 +25,6 @@ class VehicleRoadTax(Document):
 			v.update_road_tax_details()
 
 		update_vehicle_details(self.vaahan)
-		old_vaahan = self.get_doc_before_save().vaahan
-		if old_vaahan != self.vaahan:
-			update_vehicle_details(old_vaahan)
+		old_doc = self.get_doc_before_save()
+		if old_doc and old_doc.vaahan != self.vaahan:
+			update_vehicle_details(old_doc.vaahan)
