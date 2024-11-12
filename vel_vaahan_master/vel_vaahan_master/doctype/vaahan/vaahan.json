@@ -12,7 +12,9 @@
   "chassis_number",
   "engine_number",
   "color",
+  "column_break_esmk",
   "current_owner",
+  "permit_required",
   "is_in_use",
   "registration_details_section",
   "date_of_registration",
@@ -20,17 +22,25 @@
   "owner_name_in_rc",
   "owner_sdw_of",
   "owner_address_in_rc",
+  "column_break_pdqm",
   "finance_details",
   "purchase_details_section",
   "supplier",
+  "column_break_sxix",
   "date_of_purchase",
   "purchase_invoice",
   "other_section",
   "disposal_details",
   "manufacture_mon_yr",
   "status_section",
+  "status",
+  "status_txt",
   "fc_valid_till",
-  "fc_insp_due"
+  "fc_insp_due",
+  "column_break_vief",
+  "insurance_valid_till",
+  "permit_valid_till",
+  "road_tax_valid_till"
  ],
  "fields": [
   {
@@ -164,11 +174,63 @@
    "fieldtype": "Date",
    "label": "FC Inspection Due date",
    "read_only": 1
+  },
+  {
+   "fieldname": "insurance_valid_till",
+   "fieldtype": "Date",
+   "label": "Insurance Valid Till",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "permit_required",
+   "fieldtype": "Check",
+   "label": "Requires Permit?"
+  },
+  {
+   "fieldname": "column_break_esmk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_pdqm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_sxix",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_vief",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "OK\nPending\nUrgent"
+  },
+  {
+   "fieldname": "status_txt",
+   "fieldtype": "Data",
+   "label": "Status Text",
+   "read_only": 1
+  },
+  {
+   "fieldname": "permit_valid_till",
+   "fieldtype": "Data",
+   "label": "Permit Valid Till",
+   "read_only": 1
+  },
+  {
+   "fieldname": "road_tax_valid_till",
+   "fieldtype": "Data",
+   "label": "Road Tax Valid Till",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-11 00:22:20.223245",
+ "modified": "2024-11-12 07:46:27.811201",
  "modified_by": "Administrator",
  "module": "Vel Vaahan Master",
  "name": "Vaahan",

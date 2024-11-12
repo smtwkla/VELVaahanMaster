@@ -16,7 +16,8 @@
   "coverage_details",
   "idv",
   "premium",
-  "payment"
+  "payment",
+  "remarks"
  ],
  "fields": [
   {
@@ -80,11 +81,16 @@
    "fieldname": "idv",
    "fieldtype": "Currency",
    "label": "Insured Declared Value"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-10 22:54:29.429648",
+ "modified": "2024-11-11 07:36:20.361281",
  "modified_by": "Administrator",
  "module": "Vel Vaahan Master",
  "name": "Vehicle Insurance Policy",

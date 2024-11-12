@@ -10,7 +10,9 @@
   "model",
   "manufacturer",
   "column_break_zmha",
-  "is_gcv",
+  "is_gv",
+  "permit_required",
+  "road_tax_required",
   "category",
   "num_passengers",
   "specifications_section",
@@ -28,6 +30,7 @@
   "drive_type",
   "num_of_axle",
   "suspension",
+  "number_of_tyres",
   "weight_details_section",
   "uvw",
   "gvw",
@@ -42,11 +45,7 @@
   "cargo_deck_size",
   "other_details_section",
   "other_specifications",
-  "model_picture",
-  "status_section",
-  "insurance_status",
-  "maintenance_status",
-  "fc_status"
+  "model_picture"
  ],
  "fields": [
   {
@@ -70,7 +69,7 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Category",
-   "options": "Car\nTwo Wheeler\nBus\nPassenger Van\nLCV Three Wheeler\nLCV Four Wheeler\nHCV\nHCV Tipper\nTractor\nForklift Truck\nEarth Mover",
+   "options": "Car\nTwo Wheeler\nBus\nPassenger Van\nLGV Three Wheeler\nLGV Four Wheeler\nHGV\nHGV Tipper\nTractor\nForklift Truck\nEarth Mover",
    "reqd": 1
   },
   {
@@ -85,12 +84,6 @@
    "fieldname": "num_passengers",
    "fieldtype": "Int",
    "label": "Seating"
-  },
-  {
-   "default": "0",
-   "fieldname": "is_gcv",
-   "fieldtype": "Check",
-   "label": "Is Goods Carrier?"
   },
   {
    "fieldname": "specifications_section",
@@ -246,33 +239,33 @@
    "label": "Model Picture"
   },
   {
-   "fieldname": "status_section",
-   "fieldtype": "Section Break",
-   "label": "Status"
+   "fieldname": "number_of_tyres",
+   "fieldtype": "Int",
+   "label": "Number of Tyres"
   },
   {
-   "fieldname": "insurance_status",
-   "fieldtype": "Data",
-   "label": "Insurance Status",
-   "read_only": 1
+   "default": "0",
+   "fieldname": "is_gv",
+   "fieldtype": "Check",
+   "label": "Is Goods Vehicle?"
   },
   {
-   "fieldname": "maintenance_status",
-   "fieldtype": "Data",
-   "label": "Maintenance Status",
-   "read_only": 1
+   "default": "0",
+   "fieldname": "permit_required",
+   "fieldtype": "Check",
+   "label": "Permit Required?"
   },
   {
-   "fieldname": "fc_status",
-   "fieldtype": "Data",
-   "label": "FC Status",
-   "read_only": 1
+   "default": "0",
+   "fieldname": "road_tax_required",
+   "fieldtype": "Check",
+   "label": "Road Tax Required?"
   }
  ],
  "image_field": "model_picture",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-10 23:04:19.761829",
+ "modified": "2024-11-12 07:52:52.211469",
  "modified_by": "Administrator",
  "module": "Vel Vaahan Master",
  "name": "Vehicle Model",

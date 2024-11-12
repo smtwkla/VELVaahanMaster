@@ -7,11 +7,16 @@ import frappe
 
 
 class VehicleFitnessCertificate(Document):
-	def validate(self):
+
+
+	def validate_dates(self):
 		if self.inspected_on >= self.next_inspection:
 			frappe.throw('Inspection date should be before next inspection date.')
 		if self.next_inspection >= self.valid_till:
 			frappe.throw('Next Inspection date should be before Valid Till date.')
+
+	def validate(self):
+		self.validate_dates()
 
 	def on_update(self):
 		def update_vehicle_details(veh):
