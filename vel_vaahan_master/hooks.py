@@ -1,5 +1,5 @@
 app_name = "vel_vaahan_master"
-app_title = "Vel Vaahan Master"
+app_title = "VEL Vaahan Master"
 app_publisher = "SMTW"
 app_description = "Vehicle Management ERP"
 app_email = "kla@smtw.in"
@@ -15,7 +15,7 @@ app_license = "mit"
 # 	{
 # 		"name": "vel_vaahan_master",
 # 		"logo": "/assets/vel_vaahan_master/logo.png",
-# 		"title": "Vel Vaahan Master",
+# 		"title": "VEL Vaahan Master",
 # 		"route": "/vel_vaahan_master",
 # 		"has_permission": "vel_vaahan_master.api.permission.has_app_permission"
 # 	}
