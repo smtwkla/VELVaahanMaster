@@ -70,7 +70,7 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Category",
-   "options": "Car\nTwo Wheeler\nBus\nPassenger Van\nLGV Three Wheeler\nLGV Four Wheeler\nHGV\nHGV Tipper\nTractor\nForklift Truck\nEarth Mover",
+   "options": "Motor Cycle W/o Gear\nMotor Cycle With Gear\nLight Passenger Vehicle\nHeavy Passenger Vehicle\nLGV Three Wheeler\nLGV Four Wheeler\nHGV\nHGV Tipper\nTractor\nForklift Truck\nEarth Mover",
    "reqd": 1
   },
   {
@@ -271,7 +271,7 @@
  "image_field": "model_picture",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-13 06:45:49.527228",
+ "modified": "2024-11-13 13:04:18.869391",
  "modified_by": "Administrator",
  "module": "VEL Vaahan Master",
  "name": "Vehicle Model",

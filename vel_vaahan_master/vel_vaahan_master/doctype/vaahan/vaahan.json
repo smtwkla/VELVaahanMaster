@@ -15,7 +15,6 @@
   "column_break_esmk",
   "registration_type",
   "current_owner",
-  "permit_required",
   "green_tax_applicable",
   "is_in_use",
   "registration_details_section",
@@ -32,6 +31,7 @@
   "date_of_purchase",
   "purchase_invoice",
   "other_section",
+  "attachments",
   "disposal_details",
   "manufacture_mon_yr",
   "status_section",
@@ -43,7 +43,8 @@
   "insurance_valid_till",
   "permit_valid_till",
   "road_tax_valid_till",
-  "green_tax_valid_till"
+  "green_tax_valid_till",
+  "puc_valid_till"
  ],
  "fields": [
   {
@@ -187,12 +188,6 @@
    "read_only": 1
   },
   {
-   "default": "0",
-   "fieldname": "permit_required",
-   "fieldtype": "Check",
-   "label": "Requires Permit?"
-  },
-  {
    "fieldname": "column_break_esmk",
    "fieldtype": "Column Break"
   },
@@ -211,6 +206,8 @@
   {
    "fieldname": "status",
    "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Status",
    "options": "OK\nPending\nUrgent",
    "read_only": 1
@@ -238,7 +235,7 @@
    "fieldname": "registration_type",
    "fieldtype": "Select",
    "label": "Registration Type",
-   "options": "Commercial\nPersonal",
+   "options": "Commercial\nPersonal\nUnregistered",
    "reqd": 1
   },
   {
@@ -250,12 +247,24 @@
   {
    "fieldname": "green_tax_valid_till",
    "fieldtype": "Date",
-   "label": "Green Tax Valid Till"
+   "label": "Green Tax Valid Till",
+   "read_only": 1
+  },
+  {
+   "fieldname": "attachments",
+   "fieldtype": "Data",
+   "label": "Attachments"
+  },
+  {
+   "fieldname": "puc_valid_till",
+   "fieldtype": "Date",
+   "label": "PUC Valid Till",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-13 00:41:59.072580",
+ "modified": "2024-11-13 16:52:51.485736",
  "modified_by": "Administrator",
  "module": "VEL Vaahan Master",
  "name": "Vaahan",
@@ -292,7 +301,7 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Vehicle Info User",
+   "role": "Vehicle User",
    "share": 1
   },
   {
@@ -311,7 +320,7 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Vehicle Master Manager",
+   "role": "Vehicle Manager",
    "share": 1,
    "write": 1
   }

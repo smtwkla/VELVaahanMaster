@@ -88,11 +88,20 @@ class Vaahan(Document):
 		else:
 			green_tax_status = None
 
+		if getdate(self.puc_valid_till) <= getdate(today()):
+			puc_status = "Urgent"
+			status_txt += "PUC Expired. "
+		elif getdate(self.puc_valid_till) <= getdate(add_months(today(), 1)):
+			puc_status = "Pending"
+			status_txt += "PUC expiring soon. "
+		else:
+			puc_status = "OK"
+
 		if fc_status == "Urgent" or insurance_status == "Urgent" or permit_status == "Urgent" or \
-				road_tax_status == "Urgent" or green_tax_status == "Urgent":
+				road_tax_status == "Urgent" or green_tax_status == "Urgent" or puc_status == "Urgent":
 			self.status = "Urgent"
 		elif fc_status == "Pending" or insurance_status == "Pending" or permit_status == "Pending" \
-				or road_tax_status == "Pending" or green_tax_status == "Pending":
+				or road_tax_status == "Pending" or green_tax_status == "Pending" or puc_status == "Pending":
 			self.status = "Pending"
 		else:
 			self.status = "OK"
@@ -161,6 +170,18 @@ class Vaahan(Document):
 			self.green_tax_valid_till = gt[0].till_date if gt else None
 		else:
 			self.green_tax_valid_till = None
+		self.save()
+
+
+	def update_puc_details(self):
+		puc = frappe.db.get_list(
+							'Vehicle Pollution Under Control Certificate',
+		                    filters={'vaahan':self.name},
+							fields=['name','till_date'],
+		                    order_by='till_date desc',
+		                    limit=1
+		                   )
+		self.puc_valid_till = puc[0].till_date if puc else None
 		self.save()
 
 

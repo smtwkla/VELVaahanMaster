@@ -13,7 +13,9 @@
   "till_date",
   "receipt_details",
   "tax_amount",
-  "payment_date"
+  "payment_date",
+  "column_break_gyiu",
+  "remarks"
  ],
  "fields": [
   {
@@ -62,11 +64,20 @@
    "fieldname": "payment_date",
    "fieldtype": "Date",
    "label": "Date of Payment"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "column_break_gyiu",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-13 00:43:26.016817",
+ "modified": "2024-11-13 12:46:38.917524",
  "modified_by": "Administrator",
  "module": "VEL Vaahan Master",
  "name": "Vehicle Road Tax",
