@@ -43,6 +43,7 @@
   "length",
   "column_break_bsjk",
   "cargo_deck_size",
+  "body_type",
   "other_details_section",
   "other_specifications",
   "model_picture"
@@ -260,12 +261,17 @@
    "fieldname": "road_tax_required",
    "fieldtype": "Check",
    "label": "Road Tax Required?"
+  },
+  {
+   "fieldname": "body_type",
+   "fieldtype": "Data",
+   "label": "Body Type"
   }
  ],
  "image_field": "model_picture",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-13 00:42:00.604828",
+ "modified": "2024-11-13 06:45:49.527228",
  "modified_by": "Administrator",
  "module": "VEL Vaahan Master",
  "name": "Vehicle Model",
@@ -303,7 +309,7 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Vehicle Master Manager",
+   "role": "Vehicle Manager",
    "share": 1,
    "write": 1
   },
@@ -313,7 +319,7 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Vehicle Info User",
+   "role": "Vehicle User",
    "share": 1
   },
   {
