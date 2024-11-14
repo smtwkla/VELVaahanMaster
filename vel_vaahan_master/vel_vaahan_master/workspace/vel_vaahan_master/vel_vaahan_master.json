@@ -18,55 +18,6 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Vehicle Masters",
-   "link_count": 4,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Vaahan",
-   "link_count": 0,
-   "link_to": "Vaahan",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Vehicle Model",
-   "link_count": 0,
-   "link_to": "Vehicle Model",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Vehicle Manufacturer",
-   "link_count": 0,
-   "link_to": "Vehicle Manufacturer",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Vehicle Vendor",
-   "link_count": 0,
-   "link_to": "Vehicle Vendor",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
    "label": "Legal Compliance",
    "link_count": 6,
    "link_type": "DocType",
@@ -132,9 +83,78 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vehicle Masters",
+   "link_count": 6,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vaahan",
+   "link_count": 0,
+   "link_to": "Vaahan",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vehicle Model",
+   "link_count": 0,
+   "link_to": "Vehicle Model",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vehicle Manufacturer",
+   "link_count": 0,
+   "link_to": "Vehicle Manufacturer",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vehicle Vendor",
+   "link_count": 0,
+   "link_to": "Vehicle Vendor",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vehicle Body Type",
+   "link_count": 0,
+   "link_to": "Vehicle Body Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tyre Model",
+   "link_count": 0,
+   "link_to": "Tyre Model",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2024-11-13 12:39:08.460402",
+ "modified": "2024-11-14 14:35:34.272604",
  "modified_by": "Administrator",
  "module": "VEL Vaahan Master",
  "name": "VEL Vaahan Master",

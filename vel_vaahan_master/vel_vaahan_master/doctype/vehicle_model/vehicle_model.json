@@ -137,7 +137,8 @@
    "description": "in Kg",
    "fieldname": "payload",
    "fieldtype": "Int",
-   "label": "Rated Payload"
+   "label": "Rated Payload",
+   "read_only": 1
   },
   {
    "fieldname": "engine_nominal_rpm",
@@ -180,7 +181,7 @@
    "fieldname": "emission_standard",
    "fieldtype": "Select",
    "label": "Emission Standard",
-   "options": "BS VI\nBS VI\nOlder"
+   "options": "BS VI\nBS IV\nBS III\nBS II\nBS I\nOlder"
   },
   {
    "fieldname": "engine_num_cylinders",
@@ -271,7 +272,7 @@
  "image_field": "model_picture",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-13 13:04:18.869391",
+ "modified": "2024-11-14 13:55:16.000651",
  "modified_by": "Administrator",
  "module": "VEL Vaahan Master",
  "name": "Vehicle Model",
