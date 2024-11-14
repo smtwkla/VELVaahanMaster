@@ -1,7 +1,7 @@
 {
  "app": "frappe",
  "charts": [],
- "content": "[{\"id\":\"wSYvQwItoN\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">VEL Vaahan Master</span>\",\"col\":12}},{\"id\":\"7tmCBczWmS\",\"type\":\"card\",\"data\":{\"card_name\":\"Legal Compliance\",\"col\":4}},{\"id\":\"NvSKU9e4qB\",\"type\":\"card\",\"data\":{\"card_name\":\"Vehicle Masters\",\"col\":4}}]",
+ "content": "[{\"id\":\"wSYvQwItoN\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">VEL Vaahan Master</span>\",\"col\":12}},{\"id\":\"7tmCBczWmS\",\"type\":\"card\",\"data\":{\"card_name\":\"Legal Compliance\",\"col\":4}},{\"id\":\"mBd-09Z2O4\",\"type\":\"card\",\"data\":{\"card_name\":\"Vehicle Spares\",\"col\":4}},{\"id\":\"NvSKU9e4qB\",\"type\":\"card\",\"data\":{\"card_name\":\"Vehicle Masters\",\"col\":4}}]",
  "creation": "2024-11-13 00:24:10.826666",
  "custom_blocks": [],
  "docstatus": 0,
@@ -152,9 +152,28 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vehicle Spares",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tyre",
+   "link_count": 0,
+   "link_to": "Vehicle Tyre",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2024-11-14 14:35:34.272604",
+ "modified": "2024-11-14 20:34:46.085349",
  "modified_by": "Administrator",
  "module": "VEL Vaahan Master",
  "name": "VEL Vaahan Master",
