@@ -44,9 +44,11 @@
   "column_break_bsjk",
   "cargo_deck_size",
   "body_type",
+  "battery_spec",
   "other_details_section",
   "other_specifications",
-  "model_picture"
+  "model_picture",
+  "tyres"
  ],
  "fields": [
   {
@@ -127,11 +129,6 @@
    "fieldname": "other_specifications",
    "fieldtype": "Text Editor",
    "label": "Remarks"
-  },
-  {
-   "fieldname": "gvw",
-   "fieldtype": "Data",
-   "label": "Gross (Laden) Vehicle Weight"
   },
   {
    "description": "in Kg",
@@ -265,14 +262,31 @@
   },
   {
    "fieldname": "body_type",
+   "fieldtype": "Link",
+   "label": "Body Type",
+   "options": "Vehicle Body Type"
+  },
+  {
+   "fieldname": "battery_spec",
    "fieldtype": "Data",
-   "label": "Body Type"
+   "label": "Recommended Battery Specification"
+  },
+  {
+   "fieldname": "tyres",
+   "fieldtype": "Table",
+   "label": "Tyres",
+   "options": "Vehicle Tyre Specification"
+  },
+  {
+   "fieldname": "gvw",
+   "fieldtype": "Int",
+   "label": "Gross Vehicle Weight"
   }
  ],
  "image_field": "model_picture",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-14 13:55:16.000651",
+ "modified": "2024-11-14 15:39:21.612126",
  "modified_by": "Administrator",
  "module": "VEL Vaahan Master",
  "name": "Vehicle Model",

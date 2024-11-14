@@ -32,6 +32,14 @@ class Vaahan(Document):
 
 	def update_status(self):
 		status_txt = ""
+
+		if self.registration_type == 'Unregistered':
+			self.status = "OK"
+			self.status_txt = ""
+			return
+
+		fc_status = insurance_status = permit_status = road_tax_status = green_tax_status = puc_status = "OK"
+
 		if getdate(self.fc_valid_till) <= getdate(today()):
 			fc_status = "Urgent"
 			status_txt += "FC not valid. "
@@ -39,8 +47,6 @@ class Vaahan(Document):
 		      getdate(self.fc_insp_due) <= getdate(today())):
 			fc_status = "Pending"
 			status_txt += "FC Inspection due / validity expiring soon. "
-		else:
-			fc_status = "OK"
 
 		if getdate(self.insurance_valid_till) <= getdate(today()):
 			insurance_status = "Urgent"
@@ -48,8 +54,6 @@ class Vaahan(Document):
 		elif getdate(self.insurance_valid_till) <= getdate(add_months(today(), 1)):
 			insurance_status = "Pending"
 			status_txt += "Insurance expiring soon. "
-		else:
-			insurance_status = "OK"
 
 		if self.requires_permit():
 			if getdate(self.permit_valid_till) <= getdate(today()):
@@ -58,8 +62,6 @@ class Vaahan(Document):
 			elif getdate(self.permit_valid_till) <= getdate(add_months(today(), 1)):
 				permit_status = "Pending"
 				status_txt += "Permit expiring soon. "
-			else:
-				permit_status = "OK"
 		else:
 			permit_status = None
 
@@ -70,8 +72,6 @@ class Vaahan(Document):
 			elif getdate(self.road_tax_valid_till) <= getdate(add_months(today(), 1)):
 				road_tax_status = "Pending"
 				status_txt += "Road Tax validity expiring soon. "
-			else:
-				road_tax_status = "OK"
 		else:
 			road_tax_status = None
 
@@ -82,9 +82,6 @@ class Vaahan(Document):
 			elif getdate(self.green_tax_valid_till) <= getdate(add_months(today(), 1)):
 				green_tax_status = "Pending"
 				status_txt += "Green Tax validity expiring soon. "
-			else:
-				green_tax_status = "OK"
-
 		else:
 			green_tax_status = None
 
@@ -94,8 +91,6 @@ class Vaahan(Document):
 		elif getdate(self.puc_valid_till) <= getdate(add_months(today(), 1)):
 			puc_status = "Pending"
 			status_txt += "PUC expiring soon. "
-		else:
-			puc_status = "OK"
 
 		if fc_status == "Urgent" or insurance_status == "Urgent" or permit_status == "Urgent" or \
 				road_tax_status == "Urgent" or green_tax_status == "Urgent" or puc_status == "Urgent":
