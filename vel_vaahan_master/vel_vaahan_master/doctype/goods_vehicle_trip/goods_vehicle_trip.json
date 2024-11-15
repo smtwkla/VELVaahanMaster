@@ -9,28 +9,7 @@
   "section_break_fwiu",
   "vaahan",
   "driver",
-  "column_break_bgwq",
-  "start_from",
-  "start_datetime",
-  "start_km",
-  "section_break_qkky",
-  "load_details",
-  "destination",
-  "column_break_swyb",
-  "customer_details",
-  "section_break_fjly",
-  "trip_segments",
-  "trip_calculated_details_section",
-  "loading_time",
-  "travel_time",
-  "waiting_time",
-  "unloading_time",
-  "column_break_azlm",
-  "total_km",
-  "total_freight",
-  "other_section",
-  "amended_from",
-  "remarks"
+  "amended_from"
  ],
  "fields": [
   {
@@ -50,49 +29,6 @@
    "reqd": 1
   },
   {
-   "fieldname": "total_km",
-   "fieldtype": "Int",
-   "label": "Total KM",
-   "read_only": 1
-  },
-  {
-   "fieldname": "trip_segments",
-   "fieldtype": "Table",
-   "label": "Trip Segments",
-   "options": "Vehicle Trip Segments"
-  },
-  {
-   "fieldname": "start_from",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Start From",
-   "reqd": 1
-  },
-  {
-   "fieldname": "start_datetime",
-   "fieldtype": "Datetime",
-   "in_list_view": 1,
-   "label": "Start Datetime",
-   "reqd": 1
-  },
-  {
-   "fieldname": "start_km",
-   "fieldtype": "Int",
-   "label": "Start KM",
-   "reqd": 1
-  },
-  {
-   "fieldname": "trip_calculated_details_section",
-   "fieldtype": "Section Break",
-   "label": "Trip Calculated Details"
-  },
-  {
-   "fieldname": "total_freight",
-   "fieldtype": "Currency",
-   "label": "Total Freight",
-   "read_only": 1
-  },
-  {
    "fieldname": "amended_from",
    "fieldtype": "Link",
    "label": "Amended From",
@@ -103,83 +39,14 @@
    "search_index": 1
   },
   {
-   "fieldname": "load_details",
-   "fieldtype": "Data",
-   "label": "Load Details"
-  },
-  {
-   "fieldname": "destination",
-   "fieldtype": "Data",
-   "label": "Destination"
-  },
-  {
-   "fieldname": "customer_details",
-   "fieldtype": "Data",
-   "label": "Customer Details"
-  },
-  {
-   "fieldname": "travel_time",
-   "fieldtype": "Float",
-   "label": "Travel Time",
-   "read_only": 1
-  },
-  {
-   "fieldname": "loading_time",
-   "fieldtype": "Float",
-   "label": "Loading Time",
-   "read_only": 1
-  },
-  {
-   "fieldname": "waiting_time",
-   "fieldtype": "Float",
-   "label": "Waiting Time",
-   "read_only": 1
-  },
-  {
-   "fieldname": "unloading_time",
-   "fieldtype": "Float",
-   "label": "Unloading Time",
-   "read_only": 1
-  },
-  {
    "fieldname": "section_break_fwiu",
    "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "column_break_bgwq",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "section_break_qkky",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "column_break_swyb",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "section_break_fjly",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "column_break_azlm",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "other_section",
-   "fieldtype": "Section Break",
-   "label": "Other"
-  },
-  {
-   "fieldname": "remarks",
-   "fieldtype": "Small Text",
-   "label": "Remarks"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-11-16 01:37:38.239109",
+ "modified": "2024-11-16 01:45:46.392989",
  "modified_by": "Administrator",
  "module": "VEL Vaahan Master",
  "name": "Goods Vehicle Trip",
