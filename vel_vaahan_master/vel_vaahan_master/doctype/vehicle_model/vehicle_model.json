@@ -303,7 +303,7 @@
  "image_field": "model_picture",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-15 13:25:46.123150",
+ "modified": "2024-11-16 02:38:01.495651",
  "modified_by": "Administrator",
  "module": "VEL Vaahan Master",
  "name": "Vehicle Model",
@@ -341,7 +341,7 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Vehicle Manager",
+   "role": "Vehicle Master Manager",
    "share": 1,
    "write": 1
   },

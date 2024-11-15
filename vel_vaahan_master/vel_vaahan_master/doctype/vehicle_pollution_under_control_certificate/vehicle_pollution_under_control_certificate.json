@@ -66,7 +66,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-13 16:47:23.423703",
+ "modified": "2024-11-16 02:37:23.688213",
  "modified_by": "Administrator",
  "module": "VEL Vaahan Master",
  "name": "Vehicle Pollution Under Control Certificate",
@@ -105,7 +105,7 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Vehicle Manager",
+   "role": "Vehicle Master Manager",
    "share": 1,
    "write": 1
   },

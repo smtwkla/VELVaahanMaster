@@ -31,7 +31,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-14 14:25:24.475566",
+ "modified": "2024-11-16 02:36:37.953282",
  "modified_by": "Administrator",
  "module": "VEL Vaahan Master",
  "name": "Tyre Model",
@@ -69,7 +69,7 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Vehicle Manager",
+   "role": "Vehicle Master Manager",
    "share": 1,
    "write": 1
   },

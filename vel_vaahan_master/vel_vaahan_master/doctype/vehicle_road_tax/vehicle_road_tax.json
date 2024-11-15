@@ -77,7 +77,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-13 12:46:38.917524",
+ "modified": "2024-11-16 02:38:16.308928",
  "modified_by": "Administrator",
  "module": "VEL Vaahan Master",
  "name": "Vehicle Road Tax",
@@ -127,7 +127,7 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Vehicle Manager",
+   "role": "Vehicle Master Manager",
    "share": 1,
    "write": 1
   },
