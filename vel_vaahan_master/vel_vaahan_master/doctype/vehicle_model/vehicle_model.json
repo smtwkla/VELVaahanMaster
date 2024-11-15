@@ -9,12 +9,12 @@
   "section_break_ohu6",
   "model",
   "manufacturer",
+  "category",
   "column_break_zmha",
+  "num_passengers",
   "is_gv",
   "permit_required",
   "road_tax_required",
-  "category",
-  "num_passengers",
   "specifications_section",
   "engine_type",
   "engine_model",
@@ -22,15 +22,13 @@
   "engine_power_hp",
   "engine_nominal_rpm",
   "engine_num_cylinders",
-  "emission_standard",
   "column_break_eqbu",
-  "is_power_steering",
+  "emission_standard",
   "clutch_type",
   "transmission",
   "drive_type",
-  "num_of_axle",
   "suspension",
-  "number_of_tyres",
+  "is_power_steering",
   "weight_details_section",
   "uvw",
   "gvw",
@@ -45,10 +43,13 @@
   "cargo_deck_size",
   "body_type",
   "battery_spec",
+  "axle_and_tyre_details_section",
+  "num_of_axle",
+  "number_of_tyres",
+  "tyres",
   "other_details_section",
   "other_specifications",
-  "model_picture",
-  "tyres"
+  "model_picture"
  ],
  "fields": [
   {
@@ -59,13 +60,15 @@
    "fieldname": "model",
    "fieldtype": "Data",
    "label": "Model Name",
+   "reqd": 1,
    "unique": 1
   },
   {
    "fieldname": "manufacturer",
    "fieldtype": "Link",
    "label": "Manufacturer",
-   "options": "Vehicle Manufacturer"
+   "options": "Vehicle Manufacturer",
+   "reqd": 1
   },
   {
    "fieldname": "category",
@@ -101,7 +104,8 @@
   {
    "fieldname": "engine_cc",
    "fieldtype": "Int",
-   "label": "Engine CC"
+   "label": "Engine CC",
+   "reqd": 1
   },
   {
    "fieldname": "engine_power_hp",
@@ -117,7 +121,8 @@
    "fieldname": "drive_type",
    "fieldtype": "Select",
    "label": "Drive Type",
-   "options": "Front Wheel Drive\nRear Wheel Drive\nFour Wheel Drive"
+   "options": "Front Wheel Drive\nRear Wheel Drive\nFour Wheel Drive",
+   "reqd": 1
   },
   {
    "default": "0",
@@ -183,12 +188,15 @@
   {
    "fieldname": "engine_num_cylinders",
    "fieldtype": "Int",
-   "label": "Engine Number of Cylinders"
+   "label": "Engine Number of Cylinders",
+   "reqd": 1
   },
   {
+   "default": "4",
    "fieldname": "num_of_axle",
    "fieldtype": "Int",
-   "label": "Number of Axle"
+   "label": "Number of Axle",
+   "reqd": 1
   },
   {
    "fieldname": "weight_details_section",
@@ -225,7 +233,8 @@
    "description": "in Kg",
    "fieldname": "uvw",
    "fieldtype": "Int",
-   "label": "Unladen Vehicle Weight"
+   "label": "Unladen Vehicle Weight",
+   "reqd": 1
   },
   {
    "fieldname": "gcw",
@@ -238,9 +247,11 @@
    "label": "Model Picture"
   },
   {
+   "description": "(excluding Stepney)",
    "fieldname": "number_of_tyres",
    "fieldtype": "Int",
-   "label": "Number of Tyres"
+   "label": "Number of Tyres",
+   "reqd": 1
   },
   {
    "default": "0",
@@ -280,13 +291,19 @@
   {
    "fieldname": "gvw",
    "fieldtype": "Int",
-   "label": "Gross Vehicle Weight"
+   "label": "Gross Vehicle Weight",
+   "reqd": 1
+  },
+  {
+   "fieldname": "axle_and_tyre_details_section",
+   "fieldtype": "Section Break",
+   "label": "Axle and Tyre Details"
   }
  ],
  "image_field": "model_picture",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-14 15:39:21.612126",
+ "modified": "2024-11-15 13:25:46.123150",
  "modified_by": "Administrator",
  "module": "VEL Vaahan Master",
  "name": "Vehicle Model",

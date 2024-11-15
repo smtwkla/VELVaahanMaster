@@ -39,6 +39,7 @@
   "status_txt",
   "fc_valid_till",
   "fc_insp_due",
+  "cur_odometer",
   "column_break_vief",
   "insurance_valid_till",
   "permit_valid_till",
@@ -260,11 +261,17 @@
    "fieldtype": "Date",
    "label": "PUC Valid Till",
    "read_only": 1
+  },
+  {
+   "fieldname": "cur_odometer",
+   "fieldtype": "Int",
+   "label": "Current Odometer Reading",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-13 16:52:51.485736",
+ "modified": "2024-11-15 07:50:52.413196",
  "modified_by": "Administrator",
  "module": "VEL Vaahan Master",
  "name": "Vaahan",

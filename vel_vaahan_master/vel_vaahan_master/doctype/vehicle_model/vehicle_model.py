@@ -14,5 +14,15 @@ class VehicleModel(Document):
 		if self.gvw < self.uvw:
 			frappe.throw("Vehicle gross weight cannot be lesser than unladen weight.")
 
+	def check_tyre_config(self):
+		tyre_pos = [t.tyre_position for t in self.tyres]
+		if len(tyre_pos) != len(set(tyre_pos)):
+			frappe.throw("Vehicle tyre position contains duplicates. Must be unique.")
+		pos_count = len([i.name for i in self.tyres if i.tyre_position != 'Stepney'])
+		if pos_count != self.number_of_tyres:
+			frappe.throw("Vehicle's number of tyres is {} but table contains {} tyres.".format(
+						self.number_of_tyres, pos_count))
+
 	def validate(self):
 		self.check_weights()
+		self.check_tyre_config()

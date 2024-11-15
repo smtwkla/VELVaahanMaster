@@ -180,6 +180,12 @@ class Vaahan(Document):
 		self.save()
 
 
+	def update_odometer(self, odo):
+		if odo > self.cur_odometer or odo == -1:
+			self.cur_odometer = odo
+			self.save()
+
+
 	def before_save(self):
 		self.update_green_tax_applicability()
 		self.update_status()
@@ -200,3 +206,4 @@ class Vaahan(Document):
 		self.update_green_tax_applicability()
 		self.update_status()
 		self.save()
+
