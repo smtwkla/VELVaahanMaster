@@ -19,6 +19,11 @@
   "section_break_lwdx",
   "trip_segments",
   "sb_trip_calc_det",
+  "loading_time",
+  "travel_time",
+  "waiting_time",
+  "unloading_time",
+  "column_break_doeg",
   "total_freight",
   "total_km",
   "other_details_section",
@@ -104,12 +109,14 @@
   {
    "fieldname": "total_freight",
    "fieldtype": "Currency",
-   "label": "Total Freight"
+   "label": "Total Freight",
+   "read_only": 1
   },
   {
    "fieldname": "total_km",
    "fieldtype": "Int",
-   "label": "Total KM"
+   "label": "Total KM",
+   "read_only": 1
   },
   {
    "fieldname": "sb_trip_calc_det",
@@ -128,12 +135,40 @@
   {
    "fieldname": "column_break_yyyx",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "loading_time",
+   "fieldtype": "Float",
+   "label": "Loading Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "travel_time",
+   "fieldtype": "Float",
+   "label": "Travel Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "waiting_time",
+   "fieldtype": "Float",
+   "label": "Waiting Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "unloading_time",
+   "fieldtype": "Float",
+   "label": "Unloading Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_doeg",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-11-16 02:09:34.729689",
+ "modified": "2024-11-16 02:14:28.268452",
  "modified_by": "Administrator",
  "module": "VEL Vaahan Master",
  "name": "Vehicle Trip GCV",
