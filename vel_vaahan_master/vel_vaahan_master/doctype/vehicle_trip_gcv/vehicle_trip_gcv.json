@@ -10,14 +10,16 @@
   "amended_from",
   "vaahan",
   "driver",
-  "trip_segments",
   "start_from",
   "start_datetime",
   "start_km",
   "load_details",
-  "destination",
   "customer_details",
-  "remarks"
+  "destination",
+  "trip_segments",
+  "remarks",
+  "total_freight",
+  "total_km"
  ],
  "fields": [
   {
@@ -57,6 +59,7 @@
    "reqd": 1
   },
   {
+   "default": "Shed",
    "fieldname": "start_from",
    "fieldtype": "Data",
    "label": "Start From",
@@ -93,12 +96,22 @@
    "fieldname": "remarks",
    "fieldtype": "Small Text",
    "label": "Remarks"
+  },
+  {
+   "fieldname": "total_freight",
+   "fieldtype": "Currency",
+   "label": "Total Freight"
+  },
+  {
+   "fieldname": "total_km",
+   "fieldtype": "Int",
+   "label": "Total KM"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-11-16 02:02:57.053001",
+ "modified": "2024-11-16 02:06:35.143780",
  "modified_by": "Administrator",
  "module": "VEL Vaahan Master",
  "name": "Vehicle Trip GCV",
