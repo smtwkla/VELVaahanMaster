@@ -8,9 +8,16 @@
  "field_order": [
   "section_break_syy5",
   "amended_from",
-  "trip_segments",
+  "vaahan",
   "driver",
-  "vaahan"
+  "trip_segments",
+  "start_from",
+  "start_datetime",
+  "start_km",
+  "load_details",
+  "destination",
+  "customer_details",
+  "remarks"
  ],
  "fields": [
   {
@@ -48,12 +55,50 @@
    "label": "Vaahan",
    "options": "Vaahan",
    "reqd": 1
+  },
+  {
+   "fieldname": "start_from",
+   "fieldtype": "Data",
+   "label": "Start From",
+   "reqd": 1
+  },
+  {
+   "fieldname": "start_datetime",
+   "fieldtype": "Datetime",
+   "label": "Start Datetime",
+   "reqd": 1
+  },
+  {
+   "fieldname": "start_km",
+   "fieldtype": "Int",
+   "label": "Start KM",
+   "reqd": 1
+  },
+  {
+   "fieldname": "load_details",
+   "fieldtype": "Data",
+   "label": "Load Details"
+  },
+  {
+   "fieldname": "destination",
+   "fieldtype": "Data",
+   "label": "Destination"
+  },
+  {
+   "fieldname": "customer_details",
+   "fieldtype": "Data",
+   "label": "Customer Details"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-11-16 01:59:34.964131",
+ "modified": "2024-11-16 02:02:57.053001",
  "modified_by": "Administrator",
  "module": "VEL Vaahan Master",
  "name": "Vehicle Trip GCV",
