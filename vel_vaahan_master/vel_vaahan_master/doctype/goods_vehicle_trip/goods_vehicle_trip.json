@@ -1,39 +1,38 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:VT-{#####}",
- "creation": "2024-11-15 08:16:26.500331",
+ "autoname": "format:GVT-{#####}",
+ "creation": "2024-11-16 00:53:58.373080",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_zrzj",
+  "section_break_fwiu",
   "vaahan",
   "driver",
-  "load_details",
-  "destination",
-  "customer_details",
-  "column_break_glhb",
+  "column_break_bgwq",
   "start_from",
   "start_datetime",
   "start_km",
-  "section_break_kpis",
+  "section_break_qkky",
+  "load_details",
+  "destination",
+  "column_break_swyb",
+  "customer_details",
+  "section_break_fjly",
   "trip_segments",
   "trip_calculated_details_section",
   "loading_time",
   "travel_time",
-  "unloading_time",
   "waiting_time",
-  "column_break_hotk",
+  "unloading_time",
+  "column_break_azlm",
   "total_km",
   "total_freight",
-  "section_break_liwn",
-  "amended_from"
+  "other_section",
+  "amended_from",
+  "remarks"
  ],
  "fields": [
-  {
-   "fieldname": "section_break_zrzj",
-   "fieldtype": "Section Break"
-  },
   {
    "fieldname": "vaahan",
    "fieldtype": "Link",
@@ -51,10 +50,8 @@
    "reqd": 1
   },
   {
-   "description": "Km",
    "fieldname": "total_km",
    "fieldtype": "Int",
-   "in_list_view": 1,
    "label": "Total KM",
    "read_only": 1
   },
@@ -65,9 +62,9 @@
    "options": "Vehicle Trip Segments"
   },
   {
-   "default": "Shed",
    "fieldname": "start_from",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Start From",
    "reqd": 1
   },
@@ -92,21 +89,8 @@
   {
    "fieldname": "total_freight",
    "fieldtype": "Currency",
-   "in_list_view": 1,
    "label": "Total Freight",
    "read_only": 1
-  },
-  {
-   "fieldname": "column_break_glhb",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "section_break_kpis",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "column_break_hotk",
-   "fieldtype": "Column Break"
   },
   {
    "fieldname": "amended_from",
@@ -134,49 +118,68 @@
    "label": "Customer Details"
   },
   {
-   "description": "hrs",
    "fieldname": "travel_time",
    "fieldtype": "Float",
    "label": "Travel Time",
-   "non_negative": 1,
-   "precision": "1",
    "read_only": 1
   },
   {
-   "description": "hrs",
    "fieldname": "loading_time",
    "fieldtype": "Float",
    "label": "Loading Time",
-   "non_negative": 1,
-   "precision": "1",
    "read_only": 1
   },
   {
-   "description": "hrs",
    "fieldname": "waiting_time",
    "fieldtype": "Float",
    "label": "Waiting Time",
-   "non_negative": 1,
-   "precision": "1",
    "read_only": 1
   },
   {
    "fieldname": "unloading_time",
    "fieldtype": "Float",
    "label": "Unloading Time",
-   "non_negative": 1,
-   "precision": "1",
    "read_only": 1
   },
   {
-   "fieldname": "section_break_liwn",
+   "fieldname": "section_break_fwiu",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_bgwq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_qkky",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_swyb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_fjly",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_azlm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "other_section",
+   "fieldtype": "Section Break",
+   "label": "Other"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-11-15 20:36:17.997619",
+ "modified": "2024-11-16 01:37:38.239109",
  "modified_by": "Administrator",
  "module": "VEL Vaahan Master",
  "name": "Goods Vehicle Trip",
@@ -193,6 +196,53 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Vehicle Admin",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Vehicle Info User",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Vehicle Info Viewer",
+   "share": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Vehicle Master Manager",
+   "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],
