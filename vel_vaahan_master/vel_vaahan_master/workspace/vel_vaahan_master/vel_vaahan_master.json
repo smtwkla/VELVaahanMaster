@@ -1,7 +1,7 @@
 {
  "app": "frappe",
  "charts": [],
- "content": "[{\"id\":\"wSYvQwItoN\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">VEL Vaahan Master</span>\",\"col\":12}},{\"id\":\"7tmCBczWmS\",\"type\":\"card\",\"data\":{\"card_name\":\"Legal Compliance\",\"col\":4}},{\"id\":\"mBd-09Z2O4\",\"type\":\"card\",\"data\":{\"card_name\":\"Vehicle Spares\",\"col\":4}},{\"id\":\"NvSKU9e4qB\",\"type\":\"card\",\"data\":{\"card_name\":\"Vehicle Masters\",\"col\":4}}]",
+ "content": "[{\"id\":\"wSYvQwItoN\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">VEL Vaahan Master</span>\",\"col\":12}},{\"id\":\"e2nv4iVdbH\",\"type\":\"card\",\"data\":{\"card_name\":\"Transactions\",\"col\":4}},{\"id\":\"7tmCBczWmS\",\"type\":\"card\",\"data\":{\"card_name\":\"Legal Compliance\",\"col\":4}},{\"id\":\"NvSKU9e4qB\",\"type\":\"card\",\"data\":{\"card_name\":\"Vehicle Masters\",\"col\":4}},{\"id\":\"r6eLyJi1Oh\",\"type\":\"card\",\"data\":{\"card_name\":\"Drivers\",\"col\":4}}]",
  "creation": "2024-11-13 00:24:10.826666",
  "custom_blocks": [],
  "docstatus": 0,
@@ -87,8 +87,27 @@
   {
    "hidden": 0,
    "is_query_report": 0,
+   "label": "Transactions",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vehicle Trip GCV",
+   "link_count": 0,
+   "link_to": "Vehicle Trip GCV",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Vehicle Masters",
-   "link_count": 6,
+   "link_count": 7,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -156,7 +175,17 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Vehicle Spares",
+   "label": "Tyre",
+   "link_count": 0,
+   "link_to": "Vehicle Tyre",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Drivers",
    "link_count": 1,
    "link_type": "DocType",
    "onboard": 0,
@@ -165,15 +194,15 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Tyre",
+   "label": "Vehicle Driver",
    "link_count": 0,
-   "link_to": "Vehicle Tyre",
+   "link_to": "Vehicle Driver",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
   }
  ],
- "modified": "2024-11-14 20:34:46.085349",
+ "modified": "2024-11-16 02:24:43.079301",
  "modified_by": "Administrator",
  "module": "VEL Vaahan Master",
  "name": "VEL Vaahan Master",

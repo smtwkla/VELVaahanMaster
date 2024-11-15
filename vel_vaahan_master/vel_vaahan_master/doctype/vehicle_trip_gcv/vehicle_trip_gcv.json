@@ -140,24 +140,28 @@
    "fieldname": "loading_time",
    "fieldtype": "Float",
    "label": "Loading Time",
+   "precision": "1",
    "read_only": 1
   },
   {
    "fieldname": "travel_time",
    "fieldtype": "Float",
    "label": "Travel Time",
+   "precision": "1",
    "read_only": 1
   },
   {
    "fieldname": "waiting_time",
    "fieldtype": "Float",
    "label": "Waiting Time",
+   "precision": "1",
    "read_only": 1
   },
   {
    "fieldname": "unloading_time",
    "fieldtype": "Float",
    "label": "Unloading Time",
+   "precision": "1",
    "read_only": 1
   },
   {
@@ -168,7 +172,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-11-16 02:14:28.268452",
+ "modified": "2024-11-16 02:15:31.871598",
  "modified_by": "Administrator",
  "module": "VEL Vaahan Master",
  "name": "Vehicle Trip GCV",
