@@ -7,19 +7,23 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_syy5",
-  "amended_from",
   "vaahan",
   "driver",
-  "start_from",
-  "start_datetime",
-  "start_km",
   "load_details",
   "customer_details",
   "destination",
+  "column_break_yyyx",
+  "start_datetime",
+  "start_km",
+  "start_from",
+  "section_break_lwdx",
   "trip_segments",
-  "remarks",
+  "sb_trip_calc_det",
   "total_freight",
-  "total_km"
+  "total_km",
+  "other_details_section",
+  "remarks",
+  "amended_from"
  ],
  "fields": [
   {
@@ -106,12 +110,30 @@
    "fieldname": "total_km",
    "fieldtype": "Int",
    "label": "Total KM"
+  },
+  {
+   "fieldname": "sb_trip_calc_det",
+   "fieldtype": "Section Break",
+   "label": "Trip Calculated Details"
+  },
+  {
+   "fieldname": "other_details_section",
+   "fieldtype": "Section Break",
+   "label": "Other Details"
+  },
+  {
+   "fieldname": "section_break_lwdx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_yyyx",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-11-16 02:06:35.143780",
+ "modified": "2024-11-16 02:09:34.729689",
  "modified_by": "Administrator",
  "module": "VEL Vaahan Master",
  "name": "Vehicle Trip GCV",
