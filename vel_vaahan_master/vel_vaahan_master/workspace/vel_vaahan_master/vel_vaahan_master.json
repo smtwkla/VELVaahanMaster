@@ -87,25 +87,6 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Transactions",
-   "link_count": 1,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Vehicle Trip GCV",
-   "link_count": 0,
-   "link_to": "Vehicle Trip GCV",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
    "label": "Vehicle Masters",
    "link_count": 7,
    "link_type": "DocType",
@@ -200,9 +181,38 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Transactions",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vehicle Trip GCV",
+   "link_count": 0,
+   "link_to": "Vehicle Trip GCV",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vehicle Trip Passenger",
+   "link_count": 0,
+   "link_to": "Passenger Vehicle Trip",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2024-11-16 02:24:43.079301",
+ "modified": "2024-11-16 19:29:20.105298",
  "modified_by": "Administrator",
  "module": "VEL Vaahan Master",
  "name": "VEL Vaahan Master",

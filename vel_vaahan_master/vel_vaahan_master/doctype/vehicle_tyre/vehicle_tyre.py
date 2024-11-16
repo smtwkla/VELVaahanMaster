@@ -7,5 +7,5 @@ from frappe.model.document import Document
 
 class VehicleTyre(Document):
 	def validate(self):
-		if self.purchase_price < 0:
+		if not self.purchase_price:
 			frappe.throw("Purchase Price must be greater than 0.")

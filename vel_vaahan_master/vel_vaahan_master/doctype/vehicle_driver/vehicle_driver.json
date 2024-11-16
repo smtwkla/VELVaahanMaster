@@ -7,10 +7,12 @@
  "field_order": [
   "section_break_9l2r",
   "driver_name",
+  "is_active",
   "sdw_of",
   "dob",
   "column_break_ncyz",
   "address",
+  "contact_phone",
   "license_details_section",
   "license_number",
   "license_type",
@@ -126,11 +128,22 @@
   {
    "fieldname": "section_break_fabk",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "contact_phone",
+   "fieldtype": "Phone",
+   "label": "Contact Phone"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active?"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-16 02:34:00.252500",
+ "modified": "2024-11-16 20:16:01.743061",
  "modified_by": "Administrator",
  "module": "VEL Vaahan Master",
  "name": "Vehicle Driver",
