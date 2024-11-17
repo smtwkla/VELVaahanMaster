@@ -1,7 +1,7 @@
 {
  "app": "frappe",
  "charts": [],
- "content": "[{\"id\":\"wSYvQwItoN\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">VEL Vaahan Master</span>\",\"col\":12}},{\"id\":\"e2nv4iVdbH\",\"type\":\"card\",\"data\":{\"card_name\":\"Transactions\",\"col\":4}},{\"id\":\"7tmCBczWmS\",\"type\":\"card\",\"data\":{\"card_name\":\"Legal Compliance\",\"col\":4}},{\"id\":\"NvSKU9e4qB\",\"type\":\"card\",\"data\":{\"card_name\":\"Vehicle Masters\",\"col\":4}},{\"id\":\"r6eLyJi1Oh\",\"type\":\"card\",\"data\":{\"card_name\":\"Drivers\",\"col\":4}}]",
+ "content": "[{\"id\":\"wSYvQwItoN\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">VEL Vaahan Master</span>\",\"col\":12}},{\"id\":\"e2nv4iVdbH\",\"type\":\"card\",\"data\":{\"card_name\":\"Transactions\",\"col\":4}},{\"id\":\"7tmCBczWmS\",\"type\":\"card\",\"data\":{\"card_name\":\"Legal Compliance\",\"col\":4}},{\"id\":\"NvSKU9e4qB\",\"type\":\"card\",\"data\":{\"card_name\":\"Vehicle Masters\",\"col\":4}},{\"id\":\"r6eLyJi1Oh\",\"type\":\"card\",\"data\":{\"card_name\":\"Drivers\",\"col\":4}},{\"id\":\"D_jM0nI27Q\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"oMffTCbN06\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports</b></span>\",\"col\":12}},{\"id\":\"gDBqKRiBde\",\"type\":\"card\",\"data\":{\"card_name\":\"Vehicle Reports\",\"col\":4}}]",
  "creation": "2024-11-13 00:24:10.826666",
  "custom_blocks": [],
  "docstatus": 0,
@@ -220,9 +220,28 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vehicle Reports",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Vehicle Fuel Consumption",
+   "link_count": 0,
+   "link_to": "Vehicle Fuel Consumption",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2024-11-17 09:53:14.229729",
+ "modified": "2024-11-17 19:09:58.315896",
  "modified_by": "Administrator",
  "module": "Vaahan",
  "name": "VEL Vaahan Master",
