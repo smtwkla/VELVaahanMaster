@@ -33,6 +33,8 @@ class VehicleTripGCV(Document):
 									seg.idx))
 
 	def validate_trip_details(self):
+		if not [s.idx for s in self.trip_segments if s.seg_type == 'Travel To']:
+			frappe.throw("There must be at least one Travel To segment.")
 
 		f_errors = [s.idx for s in self.trip_segments if (s.seg_type != 'Unloading' and s.freight_collected)]
 		if f_errors:
@@ -57,7 +59,7 @@ class VehicleTripGCV(Document):
 		for seg in self.trip_segments:
 			seg_time = str_to_dt(seg.end_datetime)
 			if start_time >= seg_time:
-				frappe.throw(f'End Time must be greater than Start Datetime: {seg.idx}')
+				frappe.throw(f'End Time must be greater than Start Time / previous End Time: {seg.idx}')
 			start_time = seg_time
 
 	def calculate_trip_details(self):

@@ -17,6 +17,7 @@
   "road_tax_required",
   "specifications_section",
   "engine_type",
+  "fuel",
   "engine_model",
   "engine_cc",
   "engine_power_hp",
@@ -298,12 +299,19 @@
    "fieldname": "axle_and_tyre_details_section",
    "fieldtype": "Section Break",
    "label": "Axle and Tyre Details"
+  },
+  {
+   "fieldname": "fuel",
+   "fieldtype": "Select",
+   "label": "Fuel",
+   "options": "Diesel\nPetrol",
+   "reqd": 1
   }
  ],
  "image_field": "model_picture",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-16 02:38:01.495651",
+ "modified": "2024-11-17 10:58:01.698026",
  "modified_by": "Administrator",
  "module": "Vaahan",
  "name": "Vehicle Model",
