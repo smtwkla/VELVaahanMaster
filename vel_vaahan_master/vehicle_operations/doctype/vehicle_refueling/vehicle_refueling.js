@@ -5,10 +5,10 @@ frappe.ui.form.on("Vehicle Refueling", {
 	setup: function(frm) {
 		frm.set_query("vaahan", "vehicle_details", function (doc) {
 			return {
-				query: "vel_vaahan_master.vaahan.doctype.vehicle_model.vehicle_model.vehicle_query",
+				query: "vel_vaahan_master.vaahan.query.vaahan_list_query",
 				filters: {
 					is_in_use: 1,
-					fuel: doc.fuel_type,
+					fuel: doc.fuel,
 				},
 			};
 		});

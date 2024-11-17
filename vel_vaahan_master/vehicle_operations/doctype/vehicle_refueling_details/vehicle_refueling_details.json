@@ -8,7 +8,9 @@
  "field_order": [
   "section_break_qy49",
   "vaahan",
-  "fuel_qty"
+  "fuel_qty",
+  "full_tank",
+  "odo"
  ],
  "fields": [
   {
@@ -21,8 +23,7 @@
    "in_list_view": 1,
    "label": "Vaahan",
    "options": "Vaahan",
-   "reqd": 1,
-   "unique": 1
+   "reqd": 1
   },
   {
    "fieldname": "fuel_qty",
@@ -31,12 +32,26 @@
    "label": "Fuel Qty",
    "precision": "1",
    "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "full_tank",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Full Tank?"
+  },
+  {
+   "fieldname": "odo",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Odometer",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-11-17 09:51:43.164951",
+ "modified": "2024-11-17 20:35:07.283446",
  "modified_by": "Administrator",
  "module": "Vehicle Operations",
  "name": "Vehicle Refueling Details",
