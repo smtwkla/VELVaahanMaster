@@ -225,7 +225,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Vehicle Reports",
-   "link_count": 1,
+   "link_count": 3,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -239,9 +239,29 @@
    "link_type": "Report",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Vehicle Trip GCV Report",
+   "link_count": 0,
+   "link_to": "Vehicle Trip GCV Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Passenger Vehicle Trip Report",
+   "link_count": 0,
+   "link_to": "Passenger Vehicle Trip Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2024-11-17 19:09:58.315896",
+ "modified": "2024-11-17 23:17:34.850151",
  "modified_by": "Administrator",
  "module": "Vaahan",
  "name": "VEL Vaahan Master",
