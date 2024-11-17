@@ -1,0 +1,154 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:FC-{vaahan}-{inspected_on}",
+ "creation": "2024-11-10 23:04:33.141976",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_udkl",
+  "vaahan",
+  "inspected_on",
+  "next_inspection",
+  "valid_till",
+  "column_break_rmhb",
+  "fee_receipt",
+  "application_number",
+  "inspection_fee_receipt",
+  "inspection_center",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_udkl",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "vaahan",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Vaahan",
+   "options": "Vaahan",
+   "reqd": 1
+  },
+  {
+   "fieldname": "fee_receipt",
+   "fieldtype": "Data",
+   "label": "Fee Receipt Details"
+  },
+  {
+   "fieldname": "application_number",
+   "fieldtype": "Data",
+   "label": "Application Number"
+  },
+  {
+   "fieldname": "inspected_on",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Inspected On",
+   "reqd": 1
+  },
+  {
+   "fieldname": "inspection_center",
+   "fieldtype": "Data",
+   "label": "Inspection Center"
+  },
+  {
+   "fieldname": "valid_till",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Valid Till",
+   "reqd": 1
+  },
+  {
+   "fieldname": "next_inspection",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Next Inspection Due Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "column_break_rmhb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "inspection_fee_receipt",
+   "fieldtype": "Data",
+   "label": "Inspection Fee Receipt Details"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-11-16 02:37:09.404574",
+ "modified_by": "Administrator",
+ "module": "Vehicle Legal Compliance",
+ "name": "Vehicle Fitness Certificate",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Vehicle Admin",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Vehicle Master Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Vehicle User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Vehicle Info Viewer",
+   "share": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

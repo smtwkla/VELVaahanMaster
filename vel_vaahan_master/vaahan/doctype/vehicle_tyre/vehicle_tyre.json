@@ -1,0 +1,144 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{tyre_model}-{serial}",
+ "creation": "2024-11-14 19:58:53.844825",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_vwey",
+  "tyre_model",
+  "serial",
+  "manufacturer",
+  "column_break_qrlm",
+  "vendor",
+  "purchase_invoice",
+  "purchase_price",
+  "section_break_utfq",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_vwey",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "tyre_model",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Tyre Model",
+   "options": "Tyre Model",
+   "reqd": 1
+  },
+  {
+   "fieldname": "serial",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Serial",
+   "reqd": 1
+  },
+  {
+   "fieldname": "manufacturer",
+   "fieldtype": "Link",
+   "label": "Manufacturer",
+   "options": "Vehicle Manufacturer"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "column_break_qrlm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vendor",
+   "fieldtype": "Link",
+   "label": "Vendor",
+   "options": "Vehicle Vendor"
+  },
+  {
+   "fieldname": "purchase_invoice",
+   "fieldtype": "Data",
+   "label": "Purchase Invoice"
+  },
+  {
+   "fieldname": "purchase_price",
+   "fieldtype": "Currency",
+   "label": "Purchase Price"
+  },
+  {
+   "fieldname": "section_break_utfq",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-11-16 02:37:44.985714",
+ "modified_by": "Administrator",
+ "module": "Vaahan",
+ "name": "Vehicle Tyre",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Vehicle Admin",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Vehicle Master Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Vehicle User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Vehicle Info Viewer",
+   "share": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
