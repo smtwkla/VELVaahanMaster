@@ -63,7 +63,8 @@
    "fieldname": "model",
    "fieldtype": "Link",
    "label": "Model",
-   "options": "Vehicle Model"
+   "options": "Vehicle Model",
+   "reqd": 1
   },
   {
    "fieldname": "color",
@@ -271,7 +272,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-16 02:36:53.276852",
+ "modified": "2024-11-17 07:42:45.704388",
  "modified_by": "Administrator",
  "module": "Vaahan",
  "name": "Vaahan",

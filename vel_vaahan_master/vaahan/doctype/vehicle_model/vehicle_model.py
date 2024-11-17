@@ -21,7 +21,7 @@ class VehicleModel(Document):
 		if len(tyre_pos) != len(set(tyre_pos)):
 			frappe.throw("Vehicle tyre position contains duplicates. Must be unique.")
 		pos_count = len([i.name for i in self.tyres if i.tyre_position != 'Stepney'])
-		if pos_count != self.number_of_tyres:
+		if pos_count != self.number_of_tyres and len(tyre_pos) != 0:
 			frappe.throw("Vehicle's number of tyres is {} but table contains {} tyres.".format(
 						self.number_of_tyres, pos_count))
 
