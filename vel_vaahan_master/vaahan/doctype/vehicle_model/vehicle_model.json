@@ -12,6 +12,7 @@
   "category",
   "column_break_zmha",
   "num_passengers",
+  "odometer_type",
   "is_gv",
   "permit_required",
   "road_tax_required",
@@ -306,12 +307,19 @@
    "label": "Fuel",
    "options": "Diesel\nPetrol",
    "reqd": 1
+  },
+  {
+   "fieldname": "odometer_type",
+   "fieldtype": "Select",
+   "label": "Odometer Type",
+   "options": "Distance\nHour Meter\nBoth",
+   "reqd": 1
   }
  ],
  "image_field": "model_picture",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-17 10:58:01.698026",
+ "modified": "2024-11-17 18:30:22.030495",
  "modified_by": "Administrator",
  "module": "Vaahan",
  "name": "Vehicle Model",
