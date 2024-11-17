@@ -63,7 +63,7 @@ class VehicleTripGCV(Document):
 			seg_time = str_to_dt(seg.end_datetime)
 			if prev_time >= seg_time:
 				frappe.throw(f'End Time must be greater than Start / previous End Time: No. {seg.idx}')
-			if prev_km >= seg.end_km:
+			if prev_km and seg.end_km and prev_km >= seg.end_km:
 				frappe.throw(f'End KM must be greater than Start / previous End KM: No. {seg.idx}')
 			prev_time = seg_time
 			prev_km = seg.end_km
@@ -75,9 +75,10 @@ class VehicleTripGCV(Document):
 		prev_km = self.start_km
 		prev_dt = self.start_datetime
 		travel_time = loading_time = unloading_time = waiting_time = timedelta(seconds=0)
+		last_km = None
 
 		for seg in self.trip_segments:
-			last_km = None
+
 			if seg.freight_collected:
 				total_amt += seg.freight_collected
 
@@ -95,7 +96,7 @@ class VehicleTripGCV(Document):
 				waiting_time = waiting_time + time_diff(seg.end_datetime, prev_dt)
 
 			prev_dt = seg.end_datetime
-
+		print("last_km:", last_km, "start", self.start_km)
 		self.total_km = (last_km - self.start_km) if last_km else None
 		self.total_freight = total_amt
 		self.travel_time = travel_time.total_seconds() / 3600

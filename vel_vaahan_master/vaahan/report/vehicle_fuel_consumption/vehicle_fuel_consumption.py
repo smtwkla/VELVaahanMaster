@@ -20,8 +20,6 @@ def execute(filters: dict | None = None):
 
 def get_columns() -> list[dict]:
 	"""Return columns for the report.
-
-	One field definition per column, just like a DocType field definition.
 	"""
 	return [
 		{
@@ -60,8 +58,6 @@ def get_columns() -> list[dict]:
 
 def get_data(filters) -> list[list]:
 	"""Return data for the report.
-
-	The report data is a list of rows, with each row being a list of cell values.
 	"""
 
 	vaahan = filters.get("vaahan")
@@ -99,5 +95,3 @@ def get_data(filters) -> list[list]:
 	query_res = query_res + [("Total KM:", tot_fuel, tot_km, None, "Avg Kmpl:", avg_mileage, None, None),]
 
 	return query_res
-
-
