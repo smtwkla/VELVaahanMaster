@@ -12,7 +12,7 @@ frappe.ui.form.on("Passenger Vehicle Trip", {
 		});
 		frm.set_query("vaahan", function() {
 			return {
-				query: "vel_vaahan_master.vaahan.doctype.vehicle_model.vehicle_model.vehicle_query",
+				query: "vel_vaahan_master.vaahan.query.vaahan_list_query",
 				filters: {
 					is_in_use: 1,
 					is_gv: 0,

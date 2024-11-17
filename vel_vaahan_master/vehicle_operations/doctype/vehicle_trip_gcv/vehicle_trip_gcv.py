@@ -32,9 +32,11 @@ class VehicleTripGCV(Document):
 					frappe.throw("End Km of Trip Segment No. {} must be greater than start Km".format(
 									seg.idx))
 
-	def validate_trip_details(self):
+	def validate_trip_details_for_submit(self):
 		if not [s.idx for s in self.trip_segments if s.seg_type == 'Travel To']:
 			frappe.throw("There must be at least one Travel To segment.")
+
+	def validate_trip_details(self):
 
 		f_errors = [s.idx for s in self.trip_segments if (s.seg_type != 'Unloading' and s.freight_collected)]
 		if f_errors:
@@ -55,12 +57,16 @@ class VehicleTripGCV(Document):
 				frappe.throw("Please enter End time in all segments.")
 			return datetime.strptime(s, "%Y-%m-%d %H:%M:%S")
 
-		start_time = str_to_dt(self.start_datetime)
+		prev_time = str_to_dt(self.start_datetime)
+		prev_km = self.start_km
 		for seg in self.trip_segments:
 			seg_time = str_to_dt(seg.end_datetime)
-			if start_time >= seg_time:
-				frappe.throw(f'End Time must be greater than Start Time / previous End Time: {seg.idx}')
-			start_time = seg_time
+			if prev_time >= seg_time:
+				frappe.throw(f'End Time must be greater than Start / previous End Time: No. {seg.idx}')
+			if prev_km >= seg.end_km:
+				frappe.throw(f'End KM must be greater than Start / previous End KM: No. {seg.idx}')
+			prev_time = seg_time
+			prev_km = seg.end_km
 
 	def calculate_trip_details(self):
 		if not self.trip_segments:
@@ -105,6 +111,9 @@ class VehicleTripGCV(Document):
 	def before_save(self):
 		self.sanitize_trip_details()
 		self.calculate_trip_details()
+
+	def before_submit(self):
+		self.validate_trip_details_for_submit()
 
 	def on_submit(self):
 		max_odo = max([s.end_km for s in self.trip_segments if s.seg_type == 'Travel To'])
