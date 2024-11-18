@@ -139,13 +139,15 @@
    "fieldname": "license_type_4w",
    "fieldtype": "Select",
    "label": "License Type 4W",
-   "options": "Light Motor Vehicle NT\nLight Motor Vehicle TR\nHeavy Motor Vehicle TR"
+   "options": "Not Applicable\nLight Motor Vehicle NT\nLight Motor Vehicle TR\nHeavy Motor Vehicle TR",
+   "reqd": 1
   },
   {
    "fieldname": "license_type_2w",
    "fieldtype": "Select",
    "label": "License Type 2W",
-   "options": "Motor Cycle Without Gear NT\nMotor Cycle With Gear NT"
+   "options": "Not Applicable\nMotor Cycle Without Gear NT\nMotor Cycle With Gear NT",
+   "reqd": 1
   },
   {
    "fieldname": "gen_title",
@@ -157,7 +159,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-18 11:45:42.548469",
+ "modified": "2024-11-18 18:09:53.010095",
  "modified_by": "Administrator",
  "module": "Vaahan",
  "name": "Vehicle Driver",
