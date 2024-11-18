@@ -1,0 +1,136 @@
+{
+ "actions": [],
+ "autoname": "V-ROU-.####",
+ "creation": "2024-11-18 21:55:08.098889",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_gdya",
+  "route_code",
+  "route_name",
+  "column_break_maky",
+  "in_use",
+  "section_break_zbyy",
+  "route_stops",
+  "section_break_ljmp",
+  "remarks",
+  "amended_from",
+  "section_break_irwt",
+  "total_km",
+  "stop_count",
+  "title"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_gdya",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Vehicle Route",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "route_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Route Code",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "route_name",
+   "fieldtype": "Data",
+   "label": "Route Name"
+  },
+  {
+   "fieldname": "route_stops",
+   "fieldtype": "Table",
+   "label": "Route Stops",
+   "options": "Vehicle Route Stops"
+  },
+  {
+   "fieldname": "stop_count",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Total Stop Count",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_km",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Total KM",
+   "read_only": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "1",
+   "fieldname": "in_use",
+   "fieldtype": "Check",
+   "label": "In Use"
+  },
+  {
+   "fieldname": "column_break_maky",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_zbyy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Title",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_ljmp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_irwt",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-11-18 23:14:09.873940",
+ "modified_by": "Administrator",
+ "module": "Vehicle Operations",
+ "name": "Vehicle Route",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title"
+}

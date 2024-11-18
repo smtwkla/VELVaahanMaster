@@ -1,0 +1,65 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-11-18 21:56:33.295056",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_zs7g",
+  "stop_name",
+  "latitude",
+  "longitude",
+  "km",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_zs7g",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "stop_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Stop Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "latitude",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Latitude"
+  },
+  {
+   "fieldname": "longitude",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Longitude"
+  },
+  {
+   "fieldname": "km",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Km",
+   "reqd": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Data",
+   "label": "Remarks"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-11-18 22:27:56.306498",
+ "modified_by": "Administrator",
+ "module": "Vehicle Operations",
+ "name": "Vehicle Route Stops",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
