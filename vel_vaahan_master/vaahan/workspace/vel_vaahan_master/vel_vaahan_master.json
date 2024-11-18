@@ -1,7 +1,7 @@
 {
  "app": "frappe",
  "charts": [],
- "content": "[{\"id\":\"wSYvQwItoN\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">VEL Vaahan Master</span>\",\"col\":12}},{\"id\":\"e2nv4iVdbH\",\"type\":\"card\",\"data\":{\"card_name\":\"Transactions\",\"col\":4}},{\"id\":\"7tmCBczWmS\",\"type\":\"card\",\"data\":{\"card_name\":\"Legal Compliance\",\"col\":4}},{\"id\":\"NvSKU9e4qB\",\"type\":\"card\",\"data\":{\"card_name\":\"Vehicle Masters\",\"col\":4}},{\"id\":\"r6eLyJi1Oh\",\"type\":\"card\",\"data\":{\"card_name\":\"Drivers\",\"col\":4}},{\"id\":\"bs9wuEO4-l\",\"type\":\"card\",\"data\":{\"card_name\":\"Other Masters\",\"col\":4}},{\"id\":\"D_jM0nI27Q\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"oMffTCbN06\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports</b></span>\",\"col\":12}},{\"id\":\"gDBqKRiBde\",\"type\":\"card\",\"data\":{\"card_name\":\"Vehicle Reports\",\"col\":4}}]",
+ "content": "[{\"id\":\"wSYvQwItoN\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">VEL Vaahan Master</span>\",\"col\":12}},{\"id\":\"e2nv4iVdbH\",\"type\":\"card\",\"data\":{\"card_name\":\"Operations\",\"col\":4}},{\"id\":\"7tmCBczWmS\",\"type\":\"card\",\"data\":{\"card_name\":\"Legal Compliance\",\"col\":4}},{\"id\":\"NvSKU9e4qB\",\"type\":\"card\",\"data\":{\"card_name\":\"Vehicle Masters\",\"col\":4}},{\"id\":\"r6eLyJi1Oh\",\"type\":\"card\",\"data\":{\"card_name\":\"Drivers\",\"col\":4}},{\"id\":\"bs9wuEO4-l\",\"type\":\"card\",\"data\":{\"card_name\":\"Other Masters\",\"col\":4}},{\"id\":\"D_jM0nI27Q\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"oMffTCbN06\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports</b></span>\",\"col\":12}},{\"id\":\"gDBqKRiBde\",\"type\":\"card\",\"data\":{\"card_name\":\"Vehicle Reports\",\"col\":4}}]",
  "creation": "2024-11-13 00:24:10.826666",
  "custom_blocks": [],
  "docstatus": 0,
@@ -99,45 +99,6 @@
    "label": "Vehicle Driver",
    "link_count": 0,
    "link_to": "Vehicle Driver",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Transactions",
-   "link_count": 3,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Vehicle Trip GCV",
-   "link_count": 0,
-   "link_to": "Vehicle Trip GCV",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Vehicle Trip Passenger",
-   "link_count": 0,
-   "link_to": "Passenger Vehicle Trip",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Vehicle Refueling",
-   "link_count": 0,
-   "link_to": "Vehicle Refueling",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -278,9 +239,58 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Operations",
+   "link_count": 4,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vehicle Trip GCV",
+   "link_count": 0,
+   "link_to": "Vehicle Trip GCV",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vehicle Trip Passenger",
+   "link_count": 0,
+   "link_to": "Passenger Vehicle Trip",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vehicle Refueling",
+   "link_count": 0,
+   "link_to": "Vehicle Refueling",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vehicle Route",
+   "link_count": 0,
+   "link_to": "Vehicle Route",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2024-11-18 17:55:16.242476",
+ "modified": "2024-11-18 23:10:30.857222",
  "modified_by": "Administrator",
  "module": "Vaahan",
  "name": "VEL Vaahan Master",
