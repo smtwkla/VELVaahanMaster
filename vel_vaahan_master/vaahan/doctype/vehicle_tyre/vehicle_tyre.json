@@ -1,7 +1,6 @@
 {
  "actions": [],
- "allow_rename": 1,
- "autoname": "format:{tyre_model}-{serial}",
+ "autoname": "V-VTY-.####",
  "creation": "2024-11-14 19:58:53.844825",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -10,12 +9,20 @@
   "tyre_model",
   "serial",
   "manufacturer",
+  "purchase_date",
   "column_break_qrlm",
   "vendor",
   "purchase_invoice",
   "purchase_price",
   "section_break_utfq",
-  "remarks"
+  "current_condition",
+  "current_status",
+  "column_break_iwkp",
+  "current_fittment",
+  "lifetime_distance",
+  "section_break_shrn",
+  "remarks",
+  "title"
  ],
  "fields": [
   {
@@ -71,15 +78,63 @@
   {
    "fieldname": "section_break_utfq",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "purchase_date",
+   "fieldtype": "Date",
+   "label": "Purchase Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "current_condition",
+   "fieldtype": "Select",
+   "label": "Current Condition",
+   "options": "Good\nWorn\nDamaged"
+  },
+  {
+   "default": "In Stock",
+   "fieldname": "current_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Current Status",
+   "options": "In Stock\nFitted\nTo Rebutton\nScrapped",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_iwkp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "current_fittment",
+   "fieldtype": "Data",
+   "label": "Current Fitment Details",
+   "read_only": 1
+  },
+  {
+   "fieldname": "lifetime_distance",
+   "fieldtype": "Int",
+   "label": "Lifetime Distance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_shrn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title",
+   "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-16 02:37:44.985714",
+ "modified": "2024-11-18 13:40:01.230746",
  "modified_by": "Administrator",
  "module": "Vaahan",
  "name": "Vehicle Tyre",
- "naming_rule": "Expression",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {
@@ -138,7 +193,9 @@
    "share": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "title"
 }

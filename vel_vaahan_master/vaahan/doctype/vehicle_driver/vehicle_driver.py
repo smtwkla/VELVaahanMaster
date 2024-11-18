@@ -3,7 +3,12 @@
 
 # import frappe
 from frappe.model.document import Document
+from frappe.model.naming import getseries
 
 
 class VehicleDriver(Document):
-	pass
+	def autoname(self):
+		prefix = 'V-DRV-'
+		sl = getseries(prefix,4)
+		self.name = f'{prefix}{sl}'
+		self.gen_title = f'{self.driver_name} {self.name}'

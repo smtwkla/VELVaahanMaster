@@ -1,7 +1,6 @@
 {
  "actions": [],
- "allow_rename": 1,
- "autoname": "field:tyre_model",
+ "autoname": "V-TYM-.####",
  "creation": "2024-11-14 14:22:06.135700",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -31,11 +30,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-16 02:36:37.953282",
+ "modified": "2024-11-18 12:56:11.936478",
  "modified_by": "Administrator",
  "module": "Vaahan",
  "name": "Tyre Model",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {
@@ -92,7 +91,9 @@
    "share": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "tyre_model"
 }

@@ -1,7 +1,6 @@
 {
  "actions": [],
- "allow_rename": 1,
- "autoname": "format:PT-{vaahan}-{permit_number}",
+ "autoname": "V-VPT-.####",
  "creation": "2024-11-12 00:05:57.591034",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -32,6 +31,7 @@
   {
    "fieldname": "permit_type",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Permit Type"
   },
   {
@@ -59,7 +59,6 @@
   {
    "fieldname": "from_date",
    "fieldtype": "Date",
-   "in_list_view": 1,
    "label": "Permit From",
    "reqd": 1
   },
@@ -73,11 +72,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-13 00:38:37.979500",
+ "modified": "2024-11-18 17:19:59.220342",
  "modified_by": "Administrator",
  "module": "Vehicle Legal Compliance",
  "name": "Vehicle Permit",
- "naming_rule": "Expression",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {

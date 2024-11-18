@@ -1,7 +1,6 @@
 {
  "actions": [],
- "allow_rename": 1,
- "autoname": "format:{registration} - {model}",
+ "autoname": "V-VAH-.####",
  "creation": "2024-11-08 07:52:30.741522",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -45,7 +44,8 @@
   "permit_valid_till",
   "road_tax_valid_till",
   "green_tax_valid_till",
-  "puc_valid_till"
+  "puc_valid_till",
+  "title"
  ],
  "fields": [
   {
@@ -268,15 +268,21 @@
    "fieldtype": "Int",
    "label": "Current Odometer Reading",
    "read_only": 1
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title",
+   "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-17 07:42:45.704388",
+ "modified": "2024-11-18 13:06:07.931757",
  "modified_by": "Administrator",
  "module": "Vaahan",
  "name": "Vaahan",
- "naming_rule": "Expression",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {
@@ -333,7 +339,9 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "title"
 }

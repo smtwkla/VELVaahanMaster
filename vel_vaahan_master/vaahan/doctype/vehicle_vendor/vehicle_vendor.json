@@ -1,7 +1,6 @@
 {
  "actions": [],
- "allow_rename": 1,
- "autoname": "field:vendor",
+ "autoname": "V-VV-.####",
  "creation": "2024-11-08 08:02:54.624362",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -51,11 +50,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-13 00:41:57.279507",
+ "modified": "2024-11-18 12:58:45.096347",
  "modified_by": "Administrator",
  "module": "Vaahan",
  "name": "Vehicle Vendor",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {
@@ -112,7 +111,9 @@
    "share": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "vendor"
 }

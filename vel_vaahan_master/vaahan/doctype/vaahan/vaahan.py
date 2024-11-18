@@ -14,10 +14,8 @@ class Vaahan(Document):
 	def requires_permit(self):
 		return frappe.get_doc("Vehicle Model", self.model).permit_required
 
-
 	def requires_road_tax(self):
 		return frappe.get_doc("Vehicle Model", self.model).road_tax_required
-
 
 	def update_green_tax_applicability(self):
 		if not self.green_tax_applicable:
@@ -26,9 +24,8 @@ class Vaahan(Document):
 				year = int(self.manufacture_mon_yr[3:])
 				age = (datetime.now() - datetime(year, mon, 1)).days / 365
 				if (self.registration_type == 'Commercial' and age > 8) or \
-						(self.registration_type == 'Personal' and age > 15) :
+					(self.registration_type == 'Personal' and age > 15):
 					self.green_tax_applicable = True
-
 
 	def update_status(self):
 		status_txt = ""
@@ -66,7 +63,8 @@ class Vaahan(Document):
 			permit_status = None
 
 		if self.requires_road_tax():
-			if (not self.road_tax_valid_till) or getdate(self.road_tax_valid_till) <= getdate(today()):
+			if (not self.road_tax_valid_till) or getdate(self.road_tax_valid_till) <= getdate(
+				today()):
 				road_tax_status = "Urgent"
 				status_txt += "Road Tax validity expired / not available. "
 			elif getdate(self.road_tax_valid_till) <= getdate(add_months(today(), 1)):
@@ -76,7 +74,8 @@ class Vaahan(Document):
 			road_tax_status = None
 
 		if self.green_tax_applicable:
-			if (not self.green_tax_valid_till) or getdate(self.green_tax_valid_till) <= getdate(today()):
+			if (not self.green_tax_valid_till) or getdate(self.green_tax_valid_till) <= getdate(
+				today()):
 				green_tax_status = "Urgent"
 				status_txt += "Green Tax validity expired / not available. "
 			elif getdate(self.green_tax_valid_till) <= getdate(add_months(today(), 1)):
@@ -93,103 +92,99 @@ class Vaahan(Document):
 			status_txt += "PUC expiring soon. "
 
 		if fc_status == "Urgent" or insurance_status == "Urgent" or permit_status == "Urgent" or \
-				road_tax_status == "Urgent" or green_tax_status == "Urgent" or puc_status == "Urgent":
+			road_tax_status == "Urgent" or green_tax_status == "Urgent" or puc_status == "Urgent":
 			self.status = "Urgent"
 		elif fc_status == "Pending" or insurance_status == "Pending" or permit_status == "Pending" \
-				or road_tax_status == "Pending" or green_tax_status == "Pending" or puc_status == "Pending":
+			or road_tax_status == "Pending" or green_tax_status == "Pending" or puc_status == "Pending":
 			self.status = "Pending"
 		else:
 			self.status = "OK"
 
 		self.status_txt = status_txt
 
-
 	def update_fc_details(self):
 		fc = frappe.db.get_list(
-							'Vehicle Fitness Certificate',
-		                    filters={'vaahan':self.name},
-							fields=['name','valid_till','next_inspection'],
-		                    order_by='valid_till desc',
-		                    limit=1
-		                   )
+			'Vehicle Fitness Certificate',
+			filters={'vaahan': self.name},
+			fields=['name', 'valid_till', 'next_inspection'],
+			order_by='valid_till desc',
+			limit=1
+		)
 		self.fc_valid_till = fc[0].valid_till if fc else None
 		self.fc_insp_due = fc[0].next_inspection if fc else None
 		self.save()
 
-
 	def update_insurance_details(self):
 		insurance = frappe.db.get_list(
-							'Vehicle Insurance Policy',
-		                    filters={'vaahan':self.name},
-							fields=['name','till_date'],
-		                    order_by='till_date desc',
-		                    limit=1
-		                   )
+			'Vehicle Insurance Policy',
+			filters={'vaahan': self.name},
+			fields=['name', 'till_date'],
+			order_by='till_date desc',
+			limit=1
+		)
 		self.insurance_valid_till = insurance[0].till_date if insurance else None
 		self.save()
 
-
 	def update_permit_details(self):
 		permit = frappe.db.get_list(
-							'Vehicle Permit',
-		                    filters={'vaahan':self.name},
-							fields=['name','till_date'],
-		                    order_by='till_date desc',
-		                    limit=1
-		                   )
+			'Vehicle Permit',
+			filters={'vaahan': self.name},
+			fields=['name', 'till_date'],
+			order_by='till_date desc',
+			limit=1
+		)
 		self.permit_valid_till = permit[0].till_date if permit else None
 		self.save()
 
-
 	def update_road_tax_details(self):
 		rt = frappe.db.get_list(
-							'Vehicle Road Tax',
-		                    filters={'vaahan':self.name},
-							fields=['name','till_date'],
-		                    order_by='till_date desc',
-		                    limit=1
-		                   )
+			'Vehicle Road Tax',
+			filters={'vaahan': self.name},
+			fields=['name', 'till_date'],
+			order_by='till_date desc',
+			limit=1
+		)
 		self.road_tax_valid_till = rt[0].till_date if rt else None
 		self.save()
-
 
 	def update_green_tax_details(self):
 		if self.green_tax_applicable:
 			gt = frappe.db.get_list(
-								'Vehicle Green Tax',
-			                    filters={'vaahan':self.name},
-								fields=['name','till_date'],
-			                    order_by='till_date desc',
-			                    limit=1
-			                   )
+				'Vehicle Green Tax',
+				filters={'vaahan': self.name},
+				fields=['name', 'till_date'],
+				order_by='till_date desc',
+				limit=1
+			)
 			self.green_tax_valid_till = gt[0].till_date if gt else None
 		else:
 			self.green_tax_valid_till = None
 		self.save()
 
-
 	def update_puc_details(self):
 		puc = frappe.db.get_list(
-							'Vehicle Pollution Under Control Certificate',
-		                    filters={'vaahan':self.name},
-							fields=['name','till_date'],
-		                    order_by='till_date desc',
-		                    limit=1
-		                   )
+			'Vehicle Pollution Under Control Certificate',
+			filters={'vaahan': self.name},
+			fields=['name', 'till_date'],
+			order_by='till_date desc',
+			limit=1
+		)
 		self.puc_valid_till = puc[0].till_date if puc else None
 		self.save()
-
 
 	def update_odometer(self, odo):
 		if odo > self.cur_odometer or odo == -1:
 			self.cur_odometer = odo
 			self.save()
 
+	def set_title(self):
+		model_name = frappe.db.get_value('Vehicle Model', self.model, 'model')
+		self.title = f'{self.registration}-{model_name}'
 
 	def before_save(self):
+		self.set_title()
 		self.update_green_tax_applicability()
 		self.update_status()
-
 
 	def validate_mfr_date(self):
 		pattern = r"^(0[1-9]|1[0-2])-\d{4}$"
@@ -197,13 +192,10 @@ class Vaahan(Document):
 		if not re.match(pattern, self.manufacture_mon_yr):
 			frappe.throw(f'Month-Year of Manufacture must be in mm-yyyy format.')
 
-
 	def validate(self):
 		self.validate_mfr_date()
-
 
 	def run_daily_scheduled_tasks(self):
 		self.update_green_tax_applicability()
 		self.update_status()
 		self.save()
-

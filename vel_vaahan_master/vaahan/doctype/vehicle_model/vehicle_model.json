@@ -1,7 +1,6 @@
 {
  "actions": [],
- "allow_rename": 1,
- "autoname": "field:model",
+ "autoname": "V-VM-.####",
  "creation": "2024-11-08 07:22:50.166905",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -194,7 +193,7 @@
    "reqd": 1
   },
   {
-   "default": "4",
+   "default": "2",
    "fieldname": "num_of_axle",
    "fieldtype": "Int",
    "label": "Number of Axle",
@@ -319,11 +318,11 @@
  "image_field": "model_picture",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-17 18:30:22.030495",
+ "modified": "2024-11-18 13:25:04.169671",
  "modified_by": "Administrator",
  "module": "Vaahan",
  "name": "Vehicle Model",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {
@@ -380,6 +379,7 @@
    "share": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],

@@ -1,6 +1,5 @@
 {
  "actions": [],
- "autoname": "format:{driver_name}-{####}",
  "creation": "2024-11-15 07:51:22.649424",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -15,7 +14,8 @@
   "contact_phone",
   "license_details_section",
   "license_number",
-  "license_type",
+  "license_type_4w",
+  "license_type_2w",
   "column_break_xwyu",
   "badge_number",
   "issuing_authority",
@@ -26,7 +26,8 @@
   "issue_date",
   "badge_date",
   "section_break_fabk",
-  "remarks"
+  "remarks",
+  "gen_title"
  ],
  "fields": [
   {
@@ -50,12 +51,6 @@
    "fieldname": "license_number",
    "fieldtype": "Data",
    "label": "License Number"
-  },
-  {
-   "fieldname": "license_type",
-   "fieldtype": "Select",
-   "label": "License Type",
-   "options": "Motor Cycle Without Gear NT\nMotor Cycle With Gear NT\nLight Motor Vehicle NT\nLight Motor Vehicle TR\nHeavy Motor Vehicle TR"
   },
   {
    "fieldname": "badge_number",
@@ -139,15 +134,33 @@
    "fieldname": "is_active",
    "fieldtype": "Check",
    "label": "Is Active?"
+  },
+  {
+   "fieldname": "license_type_4w",
+   "fieldtype": "Select",
+   "label": "License Type 4W",
+   "options": "Light Motor Vehicle NT\nLight Motor Vehicle TR\nHeavy Motor Vehicle TR"
+  },
+  {
+   "fieldname": "license_type_2w",
+   "fieldtype": "Select",
+   "label": "License Type 2W",
+   "options": "Motor Cycle Without Gear NT\nMotor Cycle With Gear NT"
+  },
+  {
+   "fieldname": "gen_title",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Generated Title",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-16 20:16:01.743061",
+ "modified": "2024-11-18 11:45:42.548469",
  "modified_by": "Administrator",
  "module": "Vaahan",
  "name": "Vehicle Driver",
- "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -206,7 +219,9 @@
    "share": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "gen_title"
 }

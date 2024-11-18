@@ -1,7 +1,6 @@
 {
  "actions": [],
- "allow_rename": 1,
- "autoname": "format:VTG-{####}",
+ "autoname": "V-VTG-.####",
  "creation": "2024-11-16 01:51:20.030276",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -173,11 +172,11 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-11-17 11:24:46.253634",
+ "modified": "2024-11-18 17:08:29.222503",
  "modified_by": "Administrator",
  "module": "Vehicle Operations",
  "name": "Vehicle Trip GCV",
- "naming_rule": "Expression",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {

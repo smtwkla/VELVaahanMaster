@@ -1,7 +1,6 @@
 {
  "actions": [],
- "allow_rename": 1,
- "autoname": "format:FC-{vaahan}-{inspected_on}",
+ "autoname": "V-VFC-.####",
  "creation": "2024-11-10 23:04:33.141976",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -44,7 +43,6 @@
   {
    "fieldname": "inspected_on",
    "fieldtype": "Date",
-   "in_list_view": 1,
    "label": "Inspected On",
    "reqd": 1
   },
@@ -84,11 +82,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-16 02:37:09.404574",
+ "modified": "2024-11-18 17:18:28.146644",
  "modified_by": "Administrator",
  "module": "Vehicle Legal Compliance",
  "name": "Vehicle Fitness Certificate",
- "naming_rule": "Expression",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {

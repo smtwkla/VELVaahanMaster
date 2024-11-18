@@ -1,7 +1,6 @@
 {
  "actions": [],
- "allow_rename": 1,
- "autoname": "format:GT-{vaahan}-{payment_date}",
+ "autoname": "V-VGT-.####",
  "creation": "2024-11-12 21:55:52.663408",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -78,11 +77,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-13 00:41:47.297808",
+ "modified": "2024-11-18 17:29:46.587223",
  "modified_by": "Administrator",
  "module": "Vehicle Legal Compliance",
  "name": "Vehicle Green Tax",
- "naming_rule": "Expression",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {

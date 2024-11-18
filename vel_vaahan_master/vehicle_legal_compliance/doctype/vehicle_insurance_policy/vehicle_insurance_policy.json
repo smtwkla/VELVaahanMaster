@@ -1,7 +1,6 @@
 {
  "actions": [],
- "allow_rename": 1,
- "autoname": "format:IN-{vaahan}-{from_date}",
+ "autoname": "V-INP-.####",
  "creation": "2024-11-10 10:54:52.850421",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -27,16 +26,18 @@
   {
    "fieldname": "vaahan",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Vaahan",
    "options": "Vaahan",
    "reqd": 1
   },
   {
    "fieldname": "insurer",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Insurer"
+   "label": "Insurer",
+   "options": "Vehicle Insurance Company"
   },
   {
    "fieldname": "policy_number",
@@ -66,7 +67,6 @@
   {
    "fieldname": "from_date",
    "fieldtype": "Date",
-   "in_list_view": 1,
    "label": "Insurance From",
    "reqd": 1
   },
@@ -90,11 +90,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-13 00:39:30.925797",
+ "modified": "2024-11-18 17:49:40.801772",
  "modified_by": "Administrator",
  "module": "Vehicle Legal Compliance",
  "name": "Vehicle Insurance Policy",
- "naming_rule": "Expression",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {
