@@ -13,8 +13,16 @@
   "start_datetime",
   "column_break_yzpu",
   "start_condition",
+  "trip_type_section",
+  "on_fixed_route",
   "section_break_gonj",
   "trip_segments",
+  "route_section",
+  "route",
+  "reverse_dir",
+  "column_break_qdse",
+  "end_km",
+  "end_datetime",
   "section_break_culi",
   "remarks",
   "calculated_details_section",
@@ -91,6 +99,7 @@
    "read_only": 1
   },
   {
+   "depends_on": "eval:doc.on_fixed_route === 0",
    "fieldname": "trip_segments",
    "fieldtype": "Table",
    "label": "Trip Segments",
@@ -126,12 +135,58 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "trip_type_section",
+   "fieldtype": "Section Break",
+   "label": "Trip Type"
+  },
+  {
+   "depends_on": "eval:doc.on_fixed_route === 1",
+   "fieldname": "route_section",
+   "fieldtype": "Section Break",
+   "label": "Route"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Link",
+   "label": "Route",
+   "mandatory_depends_on": "eval:doc.on_fixed_route === 1",
+   "options": "Vehicle Route"
+  },
+  {
+   "fieldname": "end_km",
+   "fieldtype": "Int",
+   "label": "End KM",
+   "mandatory_depends_on": "eval:doc.on_fixed_route === 1"
+  },
+  {
+   "fieldname": "end_datetime",
+   "fieldtype": "Datetime",
+   "label": "End DateTime",
+   "mandatory_depends_on": "eval:doc.on_fixed_route === 1"
+  },
+  {
+   "fieldname": "column_break_qdse",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "on_fixed_route",
+   "fieldtype": "Check",
+   "label": "On Fixed Route?"
+  },
+  {
+   "default": "0",
+   "fieldname": "reverse_dir",
+   "fieldtype": "Check",
+   "label": "Reverse Direction"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-11-18 17:57:04.610724",
+ "modified": "2024-11-18 23:15:24.396551",
  "modified_by": "Administrator",
  "module": "Vehicle Operations",
  "name": "Passenger Vehicle Trip",

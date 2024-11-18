@@ -19,5 +19,12 @@ frappe.ui.form.on("Passenger Vehicle Trip", {
 				},
 			};
 		});
+		frm.set_query("route", function() {
+			return {
+				filters: {
+					in_use: 1,
+				},
+			};
+		});
 	}
 });

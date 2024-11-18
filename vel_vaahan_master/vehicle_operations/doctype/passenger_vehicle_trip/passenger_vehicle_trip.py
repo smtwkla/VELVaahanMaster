@@ -8,6 +8,20 @@ from frappe.utils import date_diff, time_diff
 
 class PassengerVehicleTrip(Document):
 
+	def sanitize_fields(self):
+		if self.on_fixed_route:
+			self.trip_segments = []
+		else:
+			self.route = self.end_km = self.end_datetime = None
+
+	def validate_route(self):
+		if not self.on_fixed_route:
+			return
+		if self.end_km <= self.start_km:
+			frappe.throw("End KM must be greater than start KM.")
+		if self.end_datetime <= self.start_datetime:
+			frappe.throw("End datetime must be greater than start datetime.")
+
 	def calculate_trip_details(self):
 		if self.trip_segments:
 			self.total_km = self.trip_segments[-1].end_km - self.start_km
@@ -15,25 +29,38 @@ class PassengerVehicleTrip(Document):
 
 			print(self.trip_segments[-1].end_datetime, self.start_datetime)
 
-	def validate_odometer(self):
+	def validate_start_odometer(self):
 		if self.start_km < 0:
 			frappe.throw("Start Km must be greater than 0.")
+
+	def validate_trip_segments(self):
+		if self.on_fixed_route:
+			return
+
+		if not self.trip_segments:
+			frappe.throw("No trip segments have been created.")
+		last_seg = self.trip_segments[-1]
+
+		if not last_seg or not last_seg.end_km or not last_seg.end_datetime:
+			frappe.throw('Last segment must contain End KM, End Datetime.')
+
 		prev_km = self.start_km
 		for seg in self.trip_segments:
 			if seg.end_km and prev_km and prev_km >= seg.end_km:
 				frappe.throw(f'End KM must be greater than Start / previous End KM: No. {seg.idx}')
 			prev_km = seg.end_km
 
-	def validate_last_segment(self):
-		if not self.trip_segments:
-			return
-		last_seg = self.trip_segments[-1]
-		if not last_seg or not last_seg.end_km or not last_seg.end_datetime:
-			frappe.throw('Last segment must contain End KM, End Datetime.')
 
 	def before_save(self):
+		self.sanitize_fields()
 		self.calculate_trip_details()
+		pass
 
 	def validate(self):
-		self.validate_odometer()
-		self.validate_last_segment()
+		self.validate_route()
+		self.validate_start_odometer()
+
+	def before_submit(self):
+		self.validate_trip_segments()
+
+	pass

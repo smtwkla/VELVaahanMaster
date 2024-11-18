@@ -9,7 +9,9 @@
   "section_break_5cvz",
   "travel_to",
   "end_km",
-  "end_datetime"
+  "end_datetime",
+  "route",
+  "is_reverse"
  ],
  "fields": [
   {
@@ -34,12 +36,25 @@
    "fieldtype": "Datetime",
    "in_list_view": 1,
    "label": "End Datetime"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_reverse",
+   "fieldtype": "Check",
+   "label": "Is Reverse Travel",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-11-16 19:28:17.671500",
+ "modified": "2024-11-18 20:11:12.611279",
  "modified_by": "Administrator",
  "module": "Vehicle Operations",
  "name": "Passenger Vehicle Trip Segments",
