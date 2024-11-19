@@ -22,12 +22,23 @@ class PassengerVehicleTrip(Document):
 		if self.end_datetime <= self.start_datetime:
 			frappe.throw("End datetime must be greater than start datetime.")
 
-	def calculate_trip_details(self):
-		if self.trip_segments:
-			self.total_km = self.trip_segments[-1].end_km - self.start_km
-			self.total_time = time_diff(self.trip_segments[-1].end_datetime, self.start_datetime).total_seconds() / 3600
+	def get_route_km(self):
+		km = frappe.db.get_value("Vehicle Route", self.route, 'total_km')
+		return km
 
-			print(self.trip_segments[-1].end_datetime, self.start_datetime)
+	def calculate_trip_details(self):
+		if not self.on_fixed_route:
+			self.route_km = self.route_difference = 0
+			if self.trip_segments:
+				self.total_km = self.trip_segments[-1].end_km - self.start_km
+				self.total_time = time_diff(self.trip_segments[-1].end_datetime, self.start_datetime).total_seconds() / 3600
+		else:
+			self.total_km = self.end_km - self.start_km
+			self.total_time = time_diff(self.end_datetime, self.start_datetime).total_seconds() / 3600
+			route_km = self.get_route_km()
+			self.route_km = route_km
+			self.route_difference = self.total_km - route_km
+
 
 	def validate_start_odometer(self):
 		if self.start_km < 0:

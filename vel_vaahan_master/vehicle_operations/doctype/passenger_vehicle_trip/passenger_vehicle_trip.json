@@ -27,6 +27,8 @@
   "remarks",
   "calculated_details_section",
   "total_km",
+  "route_km",
+  "route_difference",
   "column_break_kjrb",
   "total_time",
   "amended_from"
@@ -181,12 +183,26 @@
    "fieldname": "reverse_dir",
    "fieldtype": "Check",
    "label": "Reverse Direction"
+  },
+  {
+   "depends_on": "eval:doc.on_fixed_route === 1",
+   "fieldname": "route_difference",
+   "fieldtype": "Int",
+   "label": "Difference from Route",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.on_fixed_route === 1",
+   "fieldname": "route_km",
+   "fieldtype": "Int",
+   "label": "Route KM",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-11-18 23:15:24.396551",
+ "modified": "2024-11-19 05:24:58.858759",
  "modified_by": "Administrator",
  "module": "Vehicle Operations",
  "name": "Passenger Vehicle Trip",
