@@ -11,4 +11,4 @@ class VehicleDriver(Document):
 		prefix = 'V-DRV-'
 		sl = getseries(prefix,4)
 		self.name = f'{prefix}{sl}'
-		self.title = f'{self.driver_name} {self.name}'
+		self.title = f'{self.driver_name} [{self.name}]'
