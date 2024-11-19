@@ -130,7 +130,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-18 13:40:01.230746",
+ "modified": "2024-11-19 05:41:07.100169",
  "modified_by": "Administrator",
  "module": "Vaahan",
  "name": "Vehicle Tyre",
@@ -179,7 +179,7 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Vehicle User",
+   "role": "Vehicle Info User",
    "share": 1,
    "write": 1
   },

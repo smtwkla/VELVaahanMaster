@@ -318,7 +318,7 @@
  "image_field": "model_picture",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-18 18:06:02.016722",
+ "modified": "2024-11-19 05:40:44.674127",
  "modified_by": "Administrator",
  "module": "Vaahan",
  "name": "Vehicle Model",
@@ -366,7 +366,7 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Vehicle User",
+   "role": "Vehicle Info User",
    "share": 1
   },
   {

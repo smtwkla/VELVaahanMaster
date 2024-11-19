@@ -82,7 +82,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-18 17:18:28.146644",
+ "modified": "2024-11-19 05:41:22.408854",
  "modified_by": "Administrator",
  "module": "Vehicle Legal Compliance",
  "name": "Vehicle Fitness Certificate",
@@ -132,7 +132,7 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Vehicle User",
+   "role": "Vehicle Info User",
    "share": 1,
    "write": 1
   },

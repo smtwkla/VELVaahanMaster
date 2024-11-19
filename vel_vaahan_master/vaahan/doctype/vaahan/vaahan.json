@@ -278,7 +278,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-18 13:06:07.931757",
+ "modified": "2024-11-19 05:42:42.014186",
  "modified_by": "Administrator",
  "module": "Vaahan",
  "name": "Vaahan",
@@ -315,7 +315,7 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Vehicle User",
+   "role": "Vehicle Info User",
    "share": 1
   },
   {
