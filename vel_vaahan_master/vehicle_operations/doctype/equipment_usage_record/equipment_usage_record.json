@@ -1,0 +1,159 @@
+{
+ "actions": [],
+ "autoname": "V-EUR-.####",
+ "creation": "2024-11-19 12:09:46.925761",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_vjco",
+  "vaahan",
+  "driver",
+  "start_condition",
+  "column_break_hyvw",
+  "start_datetime",
+  "start_hourmeter",
+  "start_location",
+  "section_break_yxib",
+  "usage_details",
+  "calculated_details_section",
+  "usage_duration",
+  "column_break_kcmv",
+  "total_run_hours",
+  "section_break_zjup",
+  "remarks",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_vjco",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "vaahan",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Vaahan",
+   "options": "Vaahan",
+   "reqd": 1
+  },
+  {
+   "fieldname": "start_location",
+   "fieldtype": "Data",
+   "label": "Start Location",
+   "reqd": 1
+  },
+  {
+   "fieldname": "start_hourmeter",
+   "fieldtype": "Float",
+   "label": "Start Hourmeter",
+   "precision": "1",
+   "reqd": 1
+  },
+  {
+   "fieldname": "start_datetime",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Start Datetime",
+   "reqd": 1
+  },
+  {
+   "fieldname": "usage_details",
+   "fieldtype": "Table",
+   "label": "Usage Details",
+   "options": "Equipment Usage Details"
+  },
+  {
+   "fieldname": "start_condition",
+   "fieldtype": "Data",
+   "label": "Starting Condition of Vehicle ",
+   "reqd": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "driver",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Driver",
+   "options": "Vehicle Driver",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_hyvw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_yxib",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_zjup",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Equipment Usage Record",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "calculated_details_section",
+   "fieldtype": "Section Break",
+   "label": "Calculated Details"
+  },
+  {
+   "description": "hrs",
+   "fieldname": "total_run_hours",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Total Run Hours",
+   "precision": "1",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_kcmv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "hrs",
+   "fieldname": "usage_duration",
+   "fieldtype": "Float",
+   "label": "Usage Duration",
+   "precision": "1",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-11-19 17:13:45.564946",
+ "modified_by": "Administrator",
+ "module": "Vehicle Operations",
+ "name": "Equipment Usage Record",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

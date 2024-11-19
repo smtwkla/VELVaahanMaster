@@ -1,0 +1,65 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-11-19 12:05:53.480223",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_0bkt",
+  "work_done",
+  "end_location",
+  "end_datetime",
+  "end_hourmeter",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_0bkt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "end_location",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "End Location",
+   "reqd": 1
+  },
+  {
+   "fieldname": "work_done",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Work Done",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_datetime",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "End Datetime"
+  },
+  {
+   "fieldname": "end_hourmeter",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "End Hour Meter"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Data",
+   "label": "Remarks"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-11-19 16:32:06.708839",
+ "modified_by": "Administrator",
+ "module": "Vehicle Operations",
+ "name": "Equipment Usage Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

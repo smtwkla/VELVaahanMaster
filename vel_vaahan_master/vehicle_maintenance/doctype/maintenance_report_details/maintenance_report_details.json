@@ -1,0 +1,74 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-11-19 12:50:17.129784",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_mkdu",
+  "component",
+  "activity_done",
+  "vendor",
+  "start_datetime",
+  "end_datetime",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_mkdu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "component",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Component/System",
+   "reqd": 1
+  },
+  {
+   "fieldname": "activity_done",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Activity Done",
+   "reqd": 1
+  },
+  {
+   "fieldname": "vendor",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Vendor",
+   "options": "Vehicle Vendor",
+   "reqd": 1
+  },
+  {
+   "fieldname": "start_datetime",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Start Datetime"
+  },
+  {
+   "fieldname": "end_datetime",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "End Datetime"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-11-19 12:57:26.221625",
+ "modified_by": "Administrator",
+ "module": "Vehicle Maintenance",
+ "name": "Maintenance Report Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

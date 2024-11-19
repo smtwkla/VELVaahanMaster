@@ -96,7 +96,7 @@ class VehicleTripGCV(Document):
 				waiting_time = waiting_time + time_diff(seg.end_datetime, prev_dt)
 
 			prev_dt = seg.end_datetime
-		print("last_km:", last_km, "start", self.start_km)
+
 		self.total_km = (last_km - self.start_km) if last_km else None
 		self.total_freight = total_amt
 		self.travel_time = travel_time.total_seconds() / 3600

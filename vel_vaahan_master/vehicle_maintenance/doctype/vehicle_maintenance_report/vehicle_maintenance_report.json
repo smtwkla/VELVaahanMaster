@@ -1,0 +1,164 @@
+{
+ "actions": [],
+ "autoname": "V-VMR-.####",
+ "creation": "2024-11-19 12:40:30.298567",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_ocvb",
+  "report_title",
+  "vaahan",
+  "column_break_tfsm",
+  "start_datetime",
+  "start_odo",
+  "end_datetime",
+  "section_break_f5wm",
+  "activities",
+  "section_break_uiof",
+  "invoices",
+  "section_break_fvij",
+  "remarks",
+  "calculated_details_section",
+  "total_amt",
+  "total_days",
+  "column_break_srau",
+  "title",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_ocvb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "vaahan",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Vaahan",
+   "options": "Vaahan",
+   "reqd": 1
+  },
+  {
+   "fieldname": "start_datetime",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Start Datetime",
+   "reqd": 1
+  },
+  {
+   "fieldname": "start_odo",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Start Odometer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_datetime",
+   "fieldtype": "Datetime",
+   "label": "End Datetime"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Text Editor",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "calculated_details_section",
+   "fieldtype": "Section Break",
+   "label": "Calculated Details"
+  },
+  {
+   "fieldname": "total_amt",
+   "fieldtype": "Currency",
+   "label": "Total Amount"
+  },
+  {
+   "fieldname": "total_days",
+   "fieldtype": "Float",
+   "label": "Total Days"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Vehicle Maintenance Report",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Title",
+   "read_only": 1
+  },
+  {
+   "fieldname": "report_title",
+   "fieldtype": "Data",
+   "label": "Report Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_f5wm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "activities",
+   "fieldtype": "Table",
+   "label": "Maintenance Activity Details",
+   "options": "Maintenance Report Details"
+  },
+  {
+   "fieldname": "column_break_tfsm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_fvij",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_srau",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_uiof",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "invoices",
+   "fieldtype": "Table",
+   "label": "Invoice Details",
+   "options": "Maintenance Invoice Details"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-11-19 13:16:30.102386",
+ "modified_by": "Administrator",
+ "module": "Vehicle Maintenance",
+ "name": "Vehicle Maintenance Report",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title"
+}
