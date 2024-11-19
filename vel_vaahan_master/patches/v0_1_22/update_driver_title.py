@@ -7,6 +7,6 @@ def execute():
 			UPDATE `tabVehicle Driver` vd SET vd.title = vd.gen_title
 				WHERE vd.title is NULL;
 		""")
-		frappe.db.sql("""
+		frappe.db.sql_ddl("""
 			ALTER TABLE `tabVehicle Driver` DROP COLUMN gen_title;
 		""")
