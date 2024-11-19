@@ -81,8 +81,8 @@ def get_data(filters) -> list[list]:
 	from_sql = "AND pt.start_datetime>='{}'".format(from_dt)
 	till_sql = "AND pt.start_datetime<='{}'".format(till_dt) if till_dt else ""
 
-	sql = """SELECT pt.name, pt.vaahan, pt.driver, pt.start_datetime, pt.total_km, pt.total_time
-				FROM `tabPassenger Vehicle Trip` pt
+	sql = """SELECT pt.name, pt.vaahan, vd.title, pt.start_datetime, pt.total_km, pt.total_time
+				FROM `tabPassenger Vehicle Trip` pt LEFT JOIN `tabVehicle Driver` vd ON pt.driver=vd.name
 				WHERE pt.docstatus = 1 {vaahan_sql} {vm_sql}
 				{from_sql} {till_sql}
 				ORDER BY pt.start_datetime ASC""".format(vaahan_sql=vaahan_sql, from_sql=from_sql,

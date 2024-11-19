@@ -27,7 +27,7 @@
   "badge_date",
   "section_break_fabk",
   "remarks",
-  "gen_title"
+  "title"
  ],
  "fields": [
   {
@@ -150,16 +150,16 @@
    "reqd": 1
   },
   {
-   "fieldname": "gen_title",
+   "fieldname": "title",
    "fieldtype": "Data",
    "hidden": 1,
-   "label": "Generated Title",
+   "label": "Title",
    "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-18 18:09:53.010095",
+ "modified": "2024-11-19 05:34:46.910595",
  "modified_by": "Administrator",
  "module": "Vaahan",
  "name": "Vehicle Driver",
@@ -225,5 +225,5 @@
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
- "title_field": "gen_title"
+ "title_field": "title"
 }
