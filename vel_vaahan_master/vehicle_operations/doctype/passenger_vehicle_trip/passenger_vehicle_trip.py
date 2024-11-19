@@ -74,4 +74,11 @@ class PassengerVehicleTrip(Document):
 	def before_submit(self):
 		self.validate_trip_segments()
 
-	pass
+	def on_submit(self):
+		max_odo = self.trip_segments[-1].end_km if not self.on_fixed_route else self.end_km
+		v = frappe.get_doc("Vaahan", self.vaahan)
+		v.update_odometer(max_odo)
+
+	def on_cancel(self):
+		v = frappe.get_doc("Vaahan", self.vaahan)
+		v.update_odometer(-1)

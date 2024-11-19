@@ -23,6 +23,7 @@ frappe.ui.form.on("Passenger Vehicle Trip", {
 			return {
 				filters: {
 					in_use: 1,
+					docstatus: 1,
 				},
 			};
 		});

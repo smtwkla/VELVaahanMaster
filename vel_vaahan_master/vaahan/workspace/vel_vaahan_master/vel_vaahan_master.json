@@ -243,8 +243,27 @@
   {
    "hidden": 0,
    "is_query_report": 0,
+   "label": "Vehicle Maintenance",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Maintenance Report",
+   "link_count": 0,
+   "link_to": "Vehicle Maintenance Report",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Operations",
-   "link_count": 4,
+   "link_count": 5,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -272,6 +291,16 @@
   {
    "hidden": 0,
    "is_query_report": 0,
+   "label": "Equipment Usage Record",
+   "link_count": 0,
+   "link_to": "Equipment Usage Record",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Vehicle Refueling",
    "link_count": 0,
    "link_to": "Vehicle Refueling",
@@ -288,28 +317,9 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Vehicle Maintenance",
-   "link_count": 1,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Maintenance Report",
-   "link_count": 0,
-   "link_to": "Vehicle Maintenance Report",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
   }
  ],
- "modified": "2024-11-19 13:19:10.463318",
+ "modified": "2024-11-19 17:41:58.766436",
  "modified_by": "Administrator",
  "module": "Vaahan",
  "name": "VEL Vaahan Master",
