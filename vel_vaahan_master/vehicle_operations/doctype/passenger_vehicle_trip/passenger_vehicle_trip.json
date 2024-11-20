@@ -8,13 +8,14 @@
   "section_break_vjoi",
   "vaahan",
   "driver",
+  "column_break_zlxu",
+  "on_fixed_route",
+  "trip_type_section",
   "start_from",
   "start_km",
   "start_datetime",
   "column_break_yzpu",
   "start_condition",
-  "trip_type_section",
-  "on_fixed_route",
   "section_break_gonj",
   "trip_segments",
   "route_section",
@@ -60,6 +61,7 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Start From",
+   "read_only_depends_on": "eval:doc.on_fixed_route === 1",
    "reqd": 1
   },
   {
@@ -141,7 +143,7 @@
   {
    "fieldname": "trip_type_section",
    "fieldtype": "Section Break",
-   "label": "Trip Type"
+   "label": "Start Details"
   },
   {
    "depends_on": "eval:doc.on_fixed_route === 1",
@@ -197,12 +199,16 @@
    "fieldtype": "Int",
    "label": "Route KM",
    "read_only": 1
+  },
+  {
+   "fieldname": "column_break_zlxu",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-11-19 05:24:58.858759",
+ "modified": "2024-11-20 06:40:49.553827",
  "modified_by": "Administrator",
  "module": "Vehicle Operations",
  "name": "Passenger Vehicle Trip",

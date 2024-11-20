@@ -14,6 +14,13 @@ class PassengerVehicleTrip(Document):
 		else:
 			self.route = self.end_km = self.end_datetime = None
 
+	def get_fixed_route_start(self):
+		if not self.on_fixed_route:
+			return
+		r = frappe.get_doc('Vehicle Route', self.route)
+		self.start_from = r.route_stops[0].stop_name if not self.reverse_dir \
+														else r.route_stops[-1].stop_name
+
 	def validate_route(self):
 		if not self.on_fixed_route:
 			return
@@ -64,6 +71,7 @@ class PassengerVehicleTrip(Document):
 
 	def before_save(self):
 		self.sanitize_fields()
+		self.get_fixed_route_start()
 		self.calculate_trip_details()
 		pass
 
