@@ -22,26 +22,31 @@ def vaahan_list_query(doctype, txt, searchfield, start, page_len, filters, as_di
 		filters = json.loads(filters)
 
 	conjunction = ""
-	in_use = ""
+	in_use = is_gv = odo = ""
 	if "is_in_use" in filters:
-		in_use = "is_in_use={}".format(filters.get("is_in_use"))
+		in_use = " is_in_use={}".format(filters.get("is_in_use"))
 		conjunction = " AND "
 
 	is_gv = ""
 	if "is_gv" in filters:
-		is_gv = conjunction + "vm.is_gv={}".format(filters.get("is_gv"))
+		is_gv = conjunction + " vm.is_gv={} AND vm.odometer_type !='Hour Meter'".format(filters.get("is_gv"))
+		conjunction = " AND "
+
+	if "odometer" in filters:
+		odo = conjunction + " vm.odometer_type = '{}'".format(filters.get("odometer"))
 		conjunction = " AND "
 
 	fuel_is = ""
 	if "fuel" in filters:
-		fuel_is = conjunction + "vm.fuel='{}'".format(filters.get("fuel"))
+		fuel_is = conjunction + " vm.fuel='{}'".format(filters.get("fuel"))
 
 	where = " WHERE " if (in_use or is_gv) else ""
 	sql = """
-	SELECT v.name FROM tabVaahan v LEFT JOIN `tabVehicle Model` vm ON v.model = vm.name
+	SELECT v.name, v.title FROM tabVaahan v LEFT JOIN `tabVehicle Model` vm ON v.model = vm.name
 		{where} {in_use}
 		{is_gv}
-		{fuel_is};
-		""".format(where=where,in_use=in_use, is_gv=is_gv, fuel_is=fuel_is)
+		{fuel_is}
+		{odometer};
+		""".format(where=where,in_use=in_use, is_gv=is_gv, fuel_is=fuel_is, odometer=odo)
 	res = frappe.db.sql(sql,{},as_dict=as_dict)
 	return res
