@@ -54,6 +54,7 @@
    "fieldname": "driver",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Driver",
    "options": "Vehicle Driver",
    "reqd": 1
@@ -65,7 +66,8 @@
    "in_standard_filter": 1,
    "label": "Vaahan",
    "options": "Vaahan",
-   "reqd": 1
+   "reqd": 1,
+   "search_index": 1
   },
   {
    "default": "Shed",
@@ -172,7 +174,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-11-18 17:08:29.222503",
+ "modified": "2024-11-21 06:27:29.899264",
  "modified_by": "Administrator",
  "module": "Vehicle Operations",
  "name": "Vehicle Trip GCV",

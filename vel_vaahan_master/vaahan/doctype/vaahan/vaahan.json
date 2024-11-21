@@ -8,6 +8,7 @@
   "section_break_llgz",
   "registration",
   "model",
+  "model_variant",
   "chassis_number",
   "engine_number",
   "color",
@@ -274,11 +275,57 @@
    "fieldtype": "Data",
    "label": "Title",
    "unique": 1
+  },
+  {
+   "fieldname": "model_variant",
+   "fieldtype": "Data",
+   "label": "Model Variant"
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2024-11-19 05:42:42.014186",
+ "links": [
+  {
+   "group": "Compliance",
+   "link_doctype": "Vehicle Fitness Certificate",
+   "link_fieldname": "vaahan"
+  },
+  {
+   "group": "Compliance",
+   "link_doctype": "Vehicle Insurance Policy",
+   "link_fieldname": "vaahan"
+  },
+  {
+   "group": "Compliance",
+   "link_doctype": "Vehicle Pollution Under Control Certificate",
+   "link_fieldname": "vaahan"
+  },
+  {
+   "group": "Compliance",
+   "link_doctype": "Vehicle Green Tax",
+   "link_fieldname": "vaahan"
+  },
+  {
+   "group": "Compliance",
+   "link_doctype": "Vehicle Road Tax",
+   "link_fieldname": "vaahan"
+  },
+  {
+   "group": "Maintenance",
+   "link_doctype": "Vehicle Maintenance Report",
+   "link_fieldname": "vaahan"
+  },
+  {
+   "group": "Operation",
+   "link_doctype": "Passenger Vehicle Trip",
+   "link_fieldname": "vaahan"
+  },
+  {
+   "group": "Operation",
+   "link_doctype": "Vehicle Trip GCV",
+   "link_fieldname": "vaahan"
+  }
+ ],
+ "modified": "2024-11-21 05:49:14.555984",
  "modified_by": "Administrator",
  "module": "Vaahan",
  "name": "Vaahan",

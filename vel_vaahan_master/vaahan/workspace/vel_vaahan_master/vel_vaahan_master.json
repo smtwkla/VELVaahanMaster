@@ -1,7 +1,7 @@
 {
  "app": "frappe",
  "charts": [],
- "content": "[{\"id\":\"wSYvQwItoN\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">VEL Vaahan Master</span>\",\"col\":12}},{\"id\":\"e2nv4iVdbH\",\"type\":\"card\",\"data\":{\"card_name\":\"Operations\",\"col\":4}},{\"id\":\"7tmCBczWmS\",\"type\":\"card\",\"data\":{\"card_name\":\"Legal Compliance\",\"col\":4}},{\"id\":\"NvSKU9e4qB\",\"type\":\"card\",\"data\":{\"card_name\":\"Vehicle Masters\",\"col\":4}},{\"id\":\"BDtbuPEo5C\",\"type\":\"card\",\"data\":{\"card_name\":\"Vehicle Maintenance\",\"col\":4}},{\"id\":\"r6eLyJi1Oh\",\"type\":\"card\",\"data\":{\"card_name\":\"Drivers\",\"col\":4}},{\"id\":\"bs9wuEO4-l\",\"type\":\"card\",\"data\":{\"card_name\":\"Other Masters\",\"col\":4}},{\"id\":\"D_jM0nI27Q\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"oMffTCbN06\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports</b></span>\",\"col\":12}},{\"id\":\"gDBqKRiBde\",\"type\":\"card\",\"data\":{\"card_name\":\"Vehicle Reports\",\"col\":4}}]",
+ "content": "[{\"id\":\"wSYvQwItoN\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">VEL Vaahan Master</span>\",\"col\":12}},{\"id\":\"e2nv4iVdbH\",\"type\":\"card\",\"data\":{\"card_name\":\"Operations\",\"col\":4}},{\"id\":\"7tmCBczWmS\",\"type\":\"card\",\"data\":{\"card_name\":\"Legal Compliance\",\"col\":4}},{\"id\":\"NvSKU9e4qB\",\"type\":\"card\",\"data\":{\"card_name\":\"Vehicle Masters\",\"col\":4}},{\"id\":\"BDtbuPEo5C\",\"type\":\"card\",\"data\":{\"card_name\":\"Vehicle Maintenance\",\"col\":4}},{\"id\":\"r6eLyJi1Oh\",\"type\":\"card\",\"data\":{\"card_name\":\"Drivers\",\"col\":4}},{\"id\":\"bs9wuEO4-l\",\"type\":\"card\",\"data\":{\"card_name\":\"Other Masters\",\"col\":4}},{\"id\":\"D_jM0nI27Q\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"oMffTCbN06\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports</b></span>\",\"col\":12}},{\"id\":\"Hd0Lbgd6E9\",\"type\":\"card\",\"data\":{\"card_name\":\"Compliance Reports\",\"col\":4}},{\"id\":\"gDBqKRiBde\",\"type\":\"card\",\"data\":{\"card_name\":\"Vehicle Reports\",\"col\":4}}]",
  "creation": "2024-11-13 00:24:10.826666",
  "custom_blocks": [],
  "docstatus": 0,
@@ -317,9 +317,28 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Compliance Reports",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Drivers License Status",
+   "link_count": 0,
+   "link_to": "Drivers License Status",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2024-11-19 17:41:58.766436",
+ "modified": "2024-11-20 13:36:25.502972",
  "modified_by": "Administrator",
  "module": "Vaahan",
  "name": "VEL Vaahan Master",

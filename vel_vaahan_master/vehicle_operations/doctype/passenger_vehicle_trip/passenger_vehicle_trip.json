@@ -46,12 +46,14 @@
    "in_standard_filter": 1,
    "label": "Vaahan",
    "options": "Vaahan",
-   "reqd": 1
+   "reqd": 1,
+   "search_index": 1
   },
   {
    "fieldname": "driver",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Driver",
    "options": "Vehicle Driver",
    "reqd": 1
@@ -208,7 +210,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-11-20 06:40:49.553827",
+ "modified": "2024-11-21 06:27:13.138713",
  "modified_by": "Administrator",
  "module": "Vehicle Operations",
  "name": "Passenger Vehicle Trip",
