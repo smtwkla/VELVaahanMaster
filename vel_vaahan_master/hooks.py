@@ -5,6 +5,9 @@ app_description = "Vehicle Management ERP"
 app_email = "kla@smtw.in"
 app_license = "mit"
 
+
+write_file = "vel_vaahan_master.overrides.file_handler.write_file"
+
 # Apps
 # ------------------
 
@@ -139,9 +142,7 @@ app_license = "mit"
 
 # doc_events = {
 # 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
+# 		"after_insert": "",
 # 	}
 # }
 
