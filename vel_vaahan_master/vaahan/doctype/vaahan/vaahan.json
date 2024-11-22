@@ -34,6 +34,8 @@
   "attachments",
   "disposal_details",
   "manufacture_mon_yr",
+  "column_break_rzui",
+  "vaahan_image",
   "status_section",
   "status",
   "status_txt",
@@ -280,8 +282,18 @@
    "fieldname": "model_variant",
    "fieldtype": "Data",
    "label": "Model Variant"
+  },
+  {
+   "fieldname": "vaahan_image",
+   "fieldtype": "Attach Image",
+   "label": "Image"
+  },
+  {
+   "fieldname": "column_break_rzui",
+   "fieldtype": "Column Break"
   }
  ],
+ "image_field": "vaahan_image",
  "index_web_pages_for_search": 1,
  "links": [
   {
@@ -325,7 +337,7 @@
    "link_fieldname": "vaahan"
   }
  ],
- "modified": "2024-11-21 05:49:14.555984",
+ "modified": "2024-11-22 00:17:37.892507",
  "modified_by": "Administrator",
  "module": "Vaahan",
  "name": "Vaahan",
