@@ -7,11 +7,14 @@
   "section_break_9l2r",
   "driver_name",
   "is_active",
-  "sdw_of",
-  "dob",
   "column_break_ncyz",
-  "address",
+  "dob",
   "contact_phone",
+  "sdw_of",
+  "section_break_xfmw",
+  "address",
+  "column_break_oneo",
+  "attach_driver_image",
   "license_details_section",
   "license_number",
   "license_type_4w",
@@ -25,6 +28,12 @@
   "column_break_lewl",
   "issue_date",
   "badge_date",
+  "attach_license_front",
+  "attach_license_back",
+  "section_break_ikqx",
+  "lic_front",
+  "column_break_brgw",
+  "lic_back",
   "section_break_fabk",
   "remarks",
   "title"
@@ -155,11 +164,56 @@
    "hidden": 1,
    "label": "Title",
    "read_only": 1
+  },
+  {
+   "fieldname": "attach_driver_image",
+   "fieldtype": "Attach Image",
+   "label": "Driver Photo"
+  },
+  {
+   "fieldname": "section_break_xfmw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_oneo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "attach_license_front",
+   "fieldtype": "Attach Image",
+   "label": "Attach License Front"
+  },
+  {
+   "fieldname": "attach_license_back",
+   "fieldtype": "Attach Image",
+   "label": "Attach License Back"
+  },
+  {
+   "fieldname": "lic_front",
+   "fieldtype": "Image",
+   "label": "License Front",
+   "options": "attach_license_front"
+  },
+  {
+   "fieldname": "lic_back",
+   "fieldtype": "Image",
+   "label": "License Back",
+   "options": "attach_license_back"
+  },
+  {
+   "fieldname": "section_break_ikqx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_brgw",
+   "fieldtype": "Column Break"
   }
  ],
+ "image_field": "attach_driver_image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-19 05:34:46.910595",
+ "max_attachments": 3,
+ "modified": "2024-11-22 06:46:53.401074",
  "modified_by": "Administrator",
  "module": "Vaahan",
  "name": "Vehicle Driver",
