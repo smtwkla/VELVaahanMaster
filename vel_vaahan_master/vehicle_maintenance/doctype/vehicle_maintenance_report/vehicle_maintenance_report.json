@@ -17,6 +17,8 @@
   "section_break_uiof",
   "invoices",
   "section_break_fvij",
+  "attachments",
+  "section_break_b7mi",
   "remarks",
   "calculated_details_section",
   "total_amt",
@@ -119,7 +121,8 @@
   },
   {
    "fieldname": "section_break_fvij",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Attachments"
   },
   {
    "fieldname": "column_break_srau",
@@ -134,12 +137,22 @@
    "fieldtype": "Table",
    "label": "Invoice Details",
    "options": "Maintenance Invoice Details"
+  },
+  {
+   "fieldname": "attachments",
+   "fieldtype": "Table",
+   "label": "Maintenance Report Attachments",
+   "options": "Maintenance Report Attachments"
+  },
+  {
+   "fieldname": "section_break_b7mi",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-11-20 07:29:45.275395",
+ "modified": "2024-11-22 14:29:55.242513",
  "modified_by": "Administrator",
  "module": "Vehicle Maintenance",
  "name": "Vehicle Maintenance Report",

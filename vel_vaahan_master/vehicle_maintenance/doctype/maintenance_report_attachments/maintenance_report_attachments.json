@@ -1,0 +1,44 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-11-22 14:28:07.986499",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_z1ob",
+  "attachment_title",
+  "attachment"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_z1ob",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "attachment_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Attachment Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "attachment",
+   "fieldtype": "Attach",
+   "label": "Attachment File",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-11-22 14:28:46.697876",
+ "modified_by": "Administrator",
+ "module": "Vehicle Maintenance",
+ "name": "Maintenance Report Attachments",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
