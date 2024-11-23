@@ -1,10 +1,6 @@
-from idlelib.browser import file_open
-
 import frappe
 import os
-from frappe.utils.data import get_url
-from frappe.utils import get_files_path
-from frappe.core.doctype.file.utils import generate_file_name, get_file_name
+
 from frappe.utils.data import cstr
 
 
