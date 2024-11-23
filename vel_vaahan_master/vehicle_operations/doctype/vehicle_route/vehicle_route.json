@@ -12,6 +12,8 @@
   "in_use",
   "section_break_zbyy",
   "route_stops",
+  "section_break_vjil",
+  "route_map",
   "section_break_ljmp",
   "remarks",
   "amended_from",
@@ -102,12 +104,21 @@
   {
    "fieldname": "section_break_irwt",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "route_map",
+   "fieldtype": "Geolocation",
+   "label": "Route Map"
+  },
+  {
+   "fieldname": "section_break_vjil",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-11-19 05:39:24.931993",
+ "modified": "2024-11-24 04:33:10.069544",
  "modified_by": "Administrator",
  "module": "Vehicle Operations",
  "name": "Vehicle Route",
@@ -137,6 +148,7 @@
    "report": 1,
    "role": "Vehicle Admin",
    "share": 1,
+   "submit": 1,
    "write": 1
   },
   {
@@ -148,18 +160,17 @@
    "report": 1,
    "role": "Vehicle Master Manager",
    "share": 1,
+   "submit": 1,
    "write": 1
   },
   {
-   "create": 1,
    "email": 1,
    "export": 1,
    "print": 1,
    "read": 1,
    "report": 1,
    "role": "Vehicle Info User",
-   "share": 1,
-   "write": 1
+   "share": 1
   },
   {
    "email": 1,
