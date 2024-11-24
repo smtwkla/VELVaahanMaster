@@ -4,7 +4,19 @@
 import frappe
 from frappe import _
 from datetime import date
-#import pandas as pd
+import sys
+
+
+def get_expiring_in(dt1, dt2):
+
+	if dt1 and dt2:
+		recent_exp = min(dt1, dt2)
+	elif not dt1 and not dt2:
+		return sys.maxsize
+	else:
+		recent_exp = dt1 or dt2
+	expiring_in = (recent_exp - date.today()).days
+	return expiring_in
 
 
 def execute(filters: dict | None = None):
@@ -85,11 +97,8 @@ def get_data(filters) -> list[list]:
 	# df = pd.Dataframe.from_records(query_res)
 
 	def check_valid(row):
-		if row["valid_till_nt"] and row["valid_till_tr"]:
-			recent_exp = min(row["valid_till_nt"], row["valid_till_tr"])
-		else:
-			recent_exp = row["valid_till_nt"] or row["valid_till_tr"]
-		expiring_in = (recent_exp - date.today()).days
+		expiring_in = get_expiring_in(row["valid_till_nt"], row["valid_till_tr"])
+
 		if expiring_in < 0:
 			return "Expired"
 		elif expiring_in < 60:
@@ -107,7 +116,5 @@ def get_data(filters) -> list[list]:
 			r["license_type_4w"] = "N/A"
 		if not r["valid_till_tr"]:
 			print(r)
-	query_res.sort(key=lambda x: min(x["valid_till_nt"],x["valid_till_tr"]) \
-								if x["valid_till_nt"] and x["valid_till_tr"] \
-								else x["valid_till_nt"] or x["valid_till_tr"])
+	query_res.sort(key=lambda x: get_expiring_in(x["valid_till_nt"], x["valid_till_tr"]))
 	return query_res
