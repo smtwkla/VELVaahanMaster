@@ -70,13 +70,12 @@ class VehicleRoute(Document):
 			if feature['geometry']['type'] == 'Point':
 				pin = (feature['geometry']['coordinates'])
 				if not self.check_if_pin_already_in_route(pin[0], pin[1]):
-					new_pin = dict(stop_name="New", latitude=pin[0], longitude=pin[1], km=0)
+					new_pin = dict(stop_name="New", latitude=pin[1], longitude=pin[0], km=0)
 					self.append("route_stops", new_pin)
 
 	def before_save(self):
 		self.set_title()
 		self.update_calculated_fields()
-		self.get_pins_from_map()
 
 	def validate_segments(self):
 		if not self.route_stops:
@@ -93,4 +92,5 @@ class VehicleRoute(Document):
 			last_km = s.km
 
 	def validate(self):
+		self.get_pins_from_map()
 		self.validate_segments()
