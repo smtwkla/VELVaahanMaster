@@ -4,7 +4,7 @@ app_publisher = "SMTW"
 app_description = "Vehicle Management ERP"
 app_email = "kla@smtw.in"
 app_license = "mit"
-
+app_logo_url = "/assets/vel_vaahan_master/images/icon.svg"
 
 write_file = "vel_vaahan_master.overrides.file_handler.write_file"
 
