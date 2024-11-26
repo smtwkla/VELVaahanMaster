@@ -7,6 +7,7 @@
  "field_order": [
   "section_break_ohu6",
   "model",
+  "model_group",
   "manufacturer",
   "category",
   "column_break_zmha",
@@ -313,12 +314,19 @@
    "label": "Odometer Type",
    "options": "Distance\nHour Meter\nBoth",
    "reqd": 1
+  },
+  {
+   "fieldname": "model_group",
+   "fieldtype": "Link",
+   "label": "Model Group",
+   "options": "Vehicle Model Group",
+   "reqd": 1
   }
  ],
  "image_field": "model_picture",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-19 05:40:44.674127",
+ "modified": "2024-11-25 22:44:23.916048",
  "modified_by": "Administrator",
  "module": "Vaahan",
  "name": "Vehicle Model",

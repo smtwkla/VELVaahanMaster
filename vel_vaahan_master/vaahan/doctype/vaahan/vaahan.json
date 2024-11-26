@@ -65,6 +65,8 @@
   {
    "fieldname": "model",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Model",
    "options": "Vehicle Model",
    "reqd": 1
@@ -337,7 +339,7 @@
    "link_fieldname": "vaahan"
   }
  ],
- "modified": "2024-11-22 00:17:37.892507",
+ "modified": "2024-11-25 22:45:47.027020",
  "modified_by": "Administrator",
  "module": "Vaahan",
  "name": "Vaahan",
