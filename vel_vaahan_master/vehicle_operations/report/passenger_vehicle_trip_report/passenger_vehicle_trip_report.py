@@ -77,9 +77,9 @@ def get_data(filters) -> list[list]:
 	else:
 		vm_sql = ""
 
-	vaahan_sql = "AND pt.vaahan='{}'".format(vaahan) if vaahan else ""
-	from_sql = "AND pt.start_datetime>='{}'".format(from_dt)
-	till_sql = "AND pt.start_datetime<='{}'".format(till_dt) if till_dt else ""
+	vaahan_sql = "AND pt.vaahan=%(vaahan)s" if vaahan else ""
+	from_sql = "AND pt.start_datetime>=%(from_date)s"
+	till_sql = "AND pt.start_datetime<=%(till_date)s" if till_dt else ""
 
 	sql = """SELECT pt.name, pt.vaahan, vd.title, pt.start_datetime, pt.total_km, pt.total_time
 				FROM `tabPassenger Vehicle Trip` pt LEFT JOIN `tabVehicle Driver` vd ON pt.driver=vd.name
@@ -88,7 +88,7 @@ def get_data(filters) -> list[list]:
 				ORDER BY pt.start_datetime ASC""".format(vaahan_sql=vaahan_sql, from_sql=from_sql,
 	                                                     till_sql=till_sql, vm_sql=vm_sql)
 
-	query_res = list(frappe.db.sql(sql))
+	query_res = list(frappe.db.sql(sql, filters))
 
 	total_km = total_time = 0
 	for row in query_res:

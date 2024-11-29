@@ -62,13 +62,13 @@ def get_data(filters) -> list[list]:
 		v_list_str = ""
 		for v in v_list:
 			v_list_str += f"'{v}',"
-		vm_sql = "AND vt.vaahan IN ({})".format(v_list_str[:-1])
+		vm_sql = "AND vt.vaahan IN ({})".format(v_list_str[:-1]) if v_list_str else ""
 	else:
 		vm_sql = ""
 
-	vaahan_sql = "AND vt.vaahan='{}'".format(vaahan) if vaahan else ""
-	from_sql = "AND vt.start_datetime>='{}'".format(from_dt)
-	till_sql = "AND vt.start_datetime<='{}'".format(till_dt) if till_dt else ""
+	vaahan_sql = "AND vt.vaahan=%(vaahan)s" if vaahan else ""
+	from_sql = "AND vt.start_datetime>=%(from_date)s"
+	till_sql = "AND vt.start_datetime<=%(till_date)s" if till_dt else ""
 
 	sql = """SELECT vt.name, vt.vaahan, vt.start_datetime, vt.total_km, vt.total_freight
 				FROM `tabVehicle Trip GCV` vt
@@ -76,8 +76,7 @@ def get_data(filters) -> list[list]:
 				{from_sql} {till_sql}
 				ORDER BY vt.start_datetime ASC""".format(vaahan_sql=vaahan_sql, from_sql=from_sql,
 	                                                     till_sql=till_sql, vm_sql=vm_sql)
-
-	query_res = list(frappe.db.sql(sql))
+	query_res = list(frappe.db.sql(sql, filters))
 
 	total_km = total_freight = 0
 	for row in query_res:
