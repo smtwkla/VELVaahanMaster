@@ -18,6 +18,13 @@ def get_columns() -> list[dict]:
 	"""Return columns for the report.	"""
 	return [
 		{
+			"label": _("ID"),
+			"fieldname": "name",
+			"fieldtype": "Link",
+			"options": "Vaahan",
+			"width": 120,
+		},
+		{
 			"label": _("Model"),
 			"fieldname": "model",
 			"fieldtype": "Data",
@@ -27,6 +34,7 @@ def get_columns() -> list[dict]:
 			"label": _("RegNo"),
 			"fieldname": "registration",
 			"fieldtype": "Data",
+			"width": 150,
 		},
 		{
 			"label": _("Mfr"),
@@ -99,7 +107,7 @@ def get_data(filters) -> list[list]:
 	and_clause = " AND " if mg_cond and status_cond else ""
 
 	csql = """
-	SELECT vm.model as model, v.registration as registration, v.manufacture_mon_yr as mfr,
+	SELECT v.name as name, vm.model as model, v.registration as registration, v.manufacture_mon_yr as mfr,
 			vm.payload as payload, v.status as status, v.fc_valid_till as fc_valid_till, v.insurance_valid_till as insurance_valid_till,
 			v.permit_valid_till as permit_valid_till, v.road_tax_valid_till as road_tax_valid_till,
 			v.green_tax_valid_till as green_tax_valid_till, v.puc_valid_till as puc_valid_till
