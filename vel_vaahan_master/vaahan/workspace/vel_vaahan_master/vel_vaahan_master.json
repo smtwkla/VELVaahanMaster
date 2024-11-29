@@ -252,25 +252,6 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Compliance Reports",
-   "link_count": 1,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Drivers License Status",
-   "link_count": 0,
-   "link_to": "Drivers License Status",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
    "label": "Vehicle Masters",
    "link_count": 7,
    "link_type": "DocType",
@@ -346,9 +327,38 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Compliance Reports",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Drivers License Status",
+   "link_count": 0,
+   "link_to": "Drivers License Status",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Vehicle Status",
+   "link_count": 0,
+   "link_to": "Vehicle Status",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2024-11-26 09:35:28.040055",
+ "modified": "2024-11-29 22:44:45.057490",
  "modified_by": "Administrator",
  "module": "Vaahan",
  "name": "VEL Vaahan Master",

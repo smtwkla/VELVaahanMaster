@@ -7,10 +7,6 @@ from frappe import _
 
 def execute(filters: dict | None = None):
 	"""Return columns and data for the report.
-
-	This is the main entry point for the report. It accepts the filters as a
-	dictionary and should return columns and data. It is called by the framework
-	every time the report is refreshed or a filter is updated.
 	"""
 	columns = get_columns()
 	data = get_data(filters)
@@ -19,10 +15,7 @@ def execute(filters: dict | None = None):
 
 
 def get_columns() -> list[dict]:
-	"""Return columns for the report.
-
-	One field definition per column, just like a DocType field definition.
-	"""
+	"""Return columns for the report.	"""
 	return [
 		{
 			"label": _("Model"),
@@ -33,7 +26,7 @@ def get_columns() -> list[dict]:
 		{
 			"label": _("RegNo"),
 			"fieldname": "registration",
-			"fieldtype": "Int",
+			"fieldtype": "Data",
 		},
 		{
 			"label": _("Mfr"),
@@ -91,21 +84,20 @@ def get_columns() -> list[dict]:
 
 
 def get_data(filters) -> list[list]:
-	"""Return data for the report.
-
-	The report data is a list of rows, with each row being a list of cell values.
+	"""Return data for Vaahan Status report.
 	"""
 
 	mg = filters.get("model_group")
-	mg_cond = "vm.model_group = '{mg}'".format(mg=mg) if mg else ""
+	mg_cond = "vm.model_group = %(model_group)s" if mg else ""
 
 	status = filters.get("status")
 	if status == 'Any':
 		status = ""
-	status_cond = " v.status='{}'".format(status) if status else ""
+	status_cond = " v.status=%(status)s" if status else ""
 
 	where_clause = " WHERE " if mg_cond or status_cond else ""
 	and_clause = " AND " if mg_cond and status_cond else ""
+
 	csql = """
 	SELECT vm.model as model, v.registration as registration, v.manufacture_mon_yr as mfr,
 			vm.payload as payload, v.status as status, v.fc_valid_till as fc_valid_till, v.insurance_valid_till as insurance_valid_till,
@@ -116,6 +108,6 @@ def get_data(filters) -> list[list]:
 	ORDER BY LEAST(v.green_tax_valid_till, v.puc_valid_till, v.permit_valid_till, v.road_tax_valid_till,
 			v.fc_valid_till, v.insurance_valid_till);
 	""".format(where_clause=where_clause, mg_cond=mg_cond, status_cond=status_cond, and_clause=and_clause)
-	print(csql)
-	query_res = frappe.db.sql(csql, as_dict=True)
+
+	query_res = frappe.db.sql(csql, filters, as_dict=True)
 	return query_res
