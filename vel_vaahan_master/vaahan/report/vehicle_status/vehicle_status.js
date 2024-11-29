@@ -8,7 +8,14 @@ frappe.query_reports["Vehicle Status"] = {
 			"label": __("Model Group"),
 			"fieldtype": "Link",
 			"options": "Vehicle Model Group",
-			"reqd": 1,
+			"reqd": 0,
+		},
+		{
+			"fieldname": "status",
+			"label": __("Status"),
+			"fieldtype": "Select",
+			"options": "Any\nOK\nPending\nUrgent",
+			"reqd": 0,
 		},
 	],
 };

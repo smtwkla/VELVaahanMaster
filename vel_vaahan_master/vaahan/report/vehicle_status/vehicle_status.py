@@ -97,17 +97,25 @@ def get_data(filters) -> list[list]:
 	"""
 
 	mg = filters.get("model_group")
-	print(mg)
+	mg_cond = "vm.model_group = '{mg}'".format(mg=mg) if mg else ""
+
+	status = filters.get("status")
+	if status == 'Any':
+		status = ""
+	status_cond = " v.status='{}'".format(status) if status else ""
+
+	where_clause = " WHERE " if mg_cond or status_cond else ""
+	and_clause = " AND " if mg_cond and status_cond else ""
 	csql = """
 	SELECT vm.model as model, v.registration as registration, v.manufacture_mon_yr as mfr,
 			vm.payload as payload, v.status as status, v.fc_valid_till as fc_valid_till, v.insurance_valid_till as insurance_valid_till,
 			v.permit_valid_till as permit_valid_till, v.road_tax_valid_till as road_tax_valid_till,
 			v.green_tax_valid_till as green_tax_valid_till, v.puc_valid_till as puc_valid_till
 	FROM `tabVaahan` v LEFT JOIN `tabVehicle Model` vm ON (v.model = vm.name)
-	WHERE vm.model_group = '{mg}'
+	{where_clause} {mg_cond} {and_clause} {status_cond}
 	ORDER BY LEAST(v.green_tax_valid_till, v.puc_valid_till, v.permit_valid_till, v.road_tax_valid_till,
 			v.fc_valid_till, v.insurance_valid_till);
-	""".format(mg=mg)
-
+	""".format(where_clause=where_clause, mg_cond=mg_cond, status_cond=status_cond, and_clause=and_clause)
+	print(csql)
 	query_res = frappe.db.sql(csql, as_dict=True)
 	return query_res
