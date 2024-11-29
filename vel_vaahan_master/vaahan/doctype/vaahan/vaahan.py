@@ -112,7 +112,7 @@ class Vaahan(Document):
 		)
 		self.fc_valid_till = fc[0].valid_till if fc else None
 		self.fc_insp_due = fc[0].next_inspection if fc else None
-		self.save()
+		self.save(ignore_permissions=True)
 
 	def update_insurance_details(self):
 		insurance = frappe.db.get_list(
@@ -123,7 +123,7 @@ class Vaahan(Document):
 			limit=1
 		)
 		self.insurance_valid_till = insurance[0].till_date if insurance else None
-		self.save()
+		self.save(ignore_permissions=True)
 
 	def update_permit_details(self):
 		permit = frappe.db.get_list(
@@ -134,7 +134,7 @@ class Vaahan(Document):
 			limit=1
 		)
 		self.permit_valid_till = permit[0].till_date if permit else None
-		self.save()
+		self.save(ignore_permissions=True)
 
 	def update_road_tax_details(self):
 		rt = frappe.db.get_list(
@@ -145,7 +145,7 @@ class Vaahan(Document):
 			limit=1
 		)
 		self.road_tax_valid_till = rt[0].till_date if rt else None
-		self.save()
+		self.save(ignore_permissions=True)
 
 	def update_green_tax_details(self):
 		if self.green_tax_applicable:
@@ -159,7 +159,7 @@ class Vaahan(Document):
 			self.green_tax_valid_till = gt[0].till_date if gt else None
 		else:
 			self.green_tax_valid_till = None
-		self.save()
+		self.save(ignore_permissions=True)
 
 	def update_puc_details(self):
 		puc = frappe.db.get_list(
@@ -170,12 +170,12 @@ class Vaahan(Document):
 			limit=1
 		)
 		self.puc_valid_till = puc[0].till_date if puc else None
-		self.save()
+		self.save(ignore_permissions=True)
 
 	def update_odometer(self, odo):
 		if odo > self.cur_odometer or odo == -1:
 			self.cur_odometer = odo
-			self.save()
+			self.save(ignore_permissions=True)
 
 	def set_title(self):
 		model_name = frappe.db.get_value('Vehicle Model', self.model, 'model')
