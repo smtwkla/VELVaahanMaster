@@ -65,17 +65,17 @@ def get_data(filters) -> list[list]:
 	till_dt = filters.get("till_date")
 	full_to_full = filters.get("full_to_full")
 
-	from_sql = "AND vr.purchase_date>='{}'".format(from_dt)
-	till_sql = "AND vr.purchase_date<='{}'".format(till_dt) if till_dt else ""
+	from_sql = "AND vr.purchase_date>=%(from_date)s"
+	till_sql = "AND vr.purchase_date<=%(till_date)s" if till_dt else ""
 
 	sql = """SELECT vr.purchase_date, vrd.fuel_qty, vrd.odo, vrd.full_tank, vr.fuel_supplier, 0
 				FROM `tabVehicle Refueling Details` vrd
 				LEFT JOIN `tabVehicle Refueling` vr ON vrd.parent=vr.name
-				WHERE vrd.vaahan = '{vaahan}' AND vr.docstatus = 1
+				WHERE vrd.vaahan = %(vaahan)s AND vr.docstatus = 1
 				{from_sql} {till_sql}
 				ORDER BY vr.purchase_date ASC""".format(vaahan=vaahan, from_sql=from_sql, till_sql=till_sql)
 
-	query_res = list(frappe.db.sql(sql))
+	query_res = list(frappe.db.sql(sql, filters))
 
 	if full_to_full:
 		if query_res:
