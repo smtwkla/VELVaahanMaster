@@ -14,15 +14,15 @@ write_file = "vel_vaahan_master.overrides.file_handler.write_file"
 # required_apps = []
 
 # Each item in the list will be shown as an app in the apps page
-# add_to_apps_screen = [
-# 	{
-# 		"name": "vel_vaahan_master",
-# 		"logo": "/assets/vel_vaahan_master/logo.png",
-# 		"title": "VEL Vaahan Master",
-# 		"route": "/vel_vaahan_master",
-# 		"has_permission": "vel_vaahan_master.api.permission.has_app_permission"
-# 	}
-# ]
+add_to_apps_screen = [
+	{
+		"name": "vel_vaahan_master",
+		"logo": "/assets/vel_vaahan_master/images/icon.svg",
+		"title": "VEL Vaahan Master",
+		"route": "/app/vel-vaahan-master" #,
+		#"has_permission": "vel_vaahan_master.api.permission.has_app_permission"
+	}
+]
 
 # Includes in <head>
 # ------------------
