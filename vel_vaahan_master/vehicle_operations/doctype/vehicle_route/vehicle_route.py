@@ -69,7 +69,7 @@ class VehicleRoute(Document):
 		for feature in map_data['features']:
 			if feature['geometry']['type'] == 'Point':
 				pin = (feature['geometry']['coordinates'])
-				if not self.check_if_pin_already_in_route(pin[0], pin[1]):
+				if not self.check_if_pin_already_in_route(pin[1], pin[0]):
 					new_pin = dict(stop_name="New", latitude=pin[1], longitude=pin[0], km=0)
 					self.append("route_stops", new_pin)
 
@@ -77,9 +77,16 @@ class VehicleRoute(Document):
 		self.set_title()
 		self.update_calculated_fields()
 
-	def validate_segments(self):
+	def before_submit(self):
+		self.validate_segments(validate_for_submit=True)
+
+	def validate_segments(self, validate_for_submit=False):
 		if not self.route_stops:
 			frappe.throw("Please enter route stops.")
+
+		stops = [s.stop_name for s in self.route_stops]
+		if "New" in stops and not validate_for_submit:
+			return True
 
 		last_km = None
 		for s in self.route_stops:
@@ -92,5 +99,6 @@ class VehicleRoute(Document):
 			last_km = s.km
 
 	def validate(self):
-		self.get_pins_from_map()
+		if self.route_map:
+			self.get_pins_from_map()
 		self.validate_segments()
