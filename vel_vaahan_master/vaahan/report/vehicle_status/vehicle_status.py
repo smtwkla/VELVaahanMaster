@@ -51,6 +51,7 @@ def get_columns() -> list[dict]:
 			"label": _("Status"),
 			"fieldname": "status",
 			"fieldtype": "Data",
+			"width": 100,
 		},
 		{
 			"label": _("FC"),
@@ -118,4 +119,8 @@ def get_data(filters) -> list[list]:
 	""".format(where_clause=where_clause, mg_cond=mg_cond, status_cond=status_cond, and_clause=and_clause)
 
 	query_res = frappe.db.sql(csql, filters, as_dict=True)
+	for res in query_res:
+		if '-' in res['mfr']:
+			split = res['mfr'].split('-')
+			res['mfr'] = split[1] + '-' + split[0]
 	return query_res
