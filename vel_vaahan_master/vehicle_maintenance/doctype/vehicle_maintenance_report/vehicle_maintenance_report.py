@@ -43,6 +43,8 @@ class VehicleMaintenanceReport(Document):
 	def calculate_invoice_details(self):
 		total = 0
 		for i in self.invoices:
+			i.invoice_amt = 0 if i.invoice_amount is None else i.invoice_amount
+			i.gst_amt = 0 if i.gst_amount is None else i.gst_amount
 			i.invoice_amt = i.invoice_gross_amt + i.gst_amt
 			total += i.invoice_amt
 		self.total_amt = total
