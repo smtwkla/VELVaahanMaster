@@ -22,31 +22,38 @@ def vaahan_list_query(doctype, txt, searchfield, start, page_len, filters, as_di
 		filters = json.loads(filters)
 
 	conjunction = ""
-	in_use = is_gv = odo = ""
+	in_use = is_gv = odo = txt_search = ""
 	if "is_in_use" in filters:
 		in_use = " is_in_use={}".format(filters.get("is_in_use"))
 		conjunction = " AND "
 
 	is_gv = ""
 	if "is_gv" in filters:
-		is_gv = conjunction + " vm.is_gv={} AND vm.odometer_type !='Hour Meter'".format(filters.get("is_gv"))
+		is_gv = conjunction + " vm.is_gv=%(is_gv)s AND vm.odometer_type !='Hour Meter'"
 		conjunction = " AND "
 
 	if "odometer" in filters:
-		odo = conjunction + " vm.odometer_type = '{}'".format(filters.get("odometer"))
+		odo = conjunction + " vm.odometer_type = %(odometer)s"
 		conjunction = " AND "
 
 	fuel_is = ""
 	if "fuel" in filters:
-		fuel_is = conjunction + " vm.fuel='{}'".format(filters.get("fuel"))
+		fuel_is = conjunction + " vm.fuel=%(fuel)s"
+		conjunction = " AND "
+
+	if txt:
+		txt_search = conjunction + ' v.title LIKE %(txt)s'
+		conjunction = " AND "
 
 	where = " WHERE " if (in_use or is_gv) else ""
-	sql = """
+	sql = f"""
 	SELECT v.name, v.title FROM tabVaahan v LEFT JOIN `tabVehicle Model` vm ON v.model = vm.name
 		{where} {in_use}
 		{is_gv}
 		{fuel_is}
-		{odometer};
-		""".format(where=where,in_use=in_use, is_gv=is_gv, fuel_is=fuel_is, odometer=odo)
-	res = frappe.db.sql(sql,{},as_dict=as_dict)
+		{odo}
+		{txt_search};
+		"""
+	parameters = {"txt": f'%{txt}%', **filters}
+	res = frappe.db.sql(sql,parameters,as_dict=as_dict)
 	return res
