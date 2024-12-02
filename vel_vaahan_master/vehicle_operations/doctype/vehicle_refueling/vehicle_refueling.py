@@ -36,7 +36,7 @@ class VehicleRefueling(Document):
 		self.check_duplicate_vaahan()
 
 	def update_calculated_fields(self):
-		self.total_qty = sum([v.fuel_qty for v in self.vehicle_details])
+		self.total_qty = sum([v.fuel_qty for v in self.vehicle_details]) + (self.non_vehicle_qty if self.non_vehicle_qty else 0)
 		self.invoice_amount = round(self.total_qty * self.fuel_rate + self.adjustment_amount, 2)
 
 	def before_save(self):

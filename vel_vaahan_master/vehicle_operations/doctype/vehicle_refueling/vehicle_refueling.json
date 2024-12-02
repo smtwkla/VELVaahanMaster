@@ -12,6 +12,8 @@
   "fuel",
   "section_break_kiao",
   "vehicle_details",
+  "section_break_fcsc",
+  "non_vehicle_qty",
   "invoice_details_section",
   "invoice_number",
   "invoice_date",
@@ -60,6 +62,7 @@
    "fieldname": "total_qty",
    "fieldtype": "Float",
    "label": "Total Qty",
+   "precision": "3",
    "read_only": 1
   },
   {
@@ -129,12 +132,22 @@
    "fieldname": "remarks",
    "fieldtype": "Small Text",
    "label": "Remarks"
+  },
+  {
+   "fieldname": "non_vehicle_qty",
+   "fieldtype": "Float",
+   "label": "Non-Vehicle Purchase Qty",
+   "precision": "3"
+  },
+  {
+   "fieldname": "section_break_fcsc",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-11-18 17:11:49.171400",
+ "modified": "2024-12-02 12:00:38.961898",
  "modified_by": "Administrator",
  "module": "Vehicle Operations",
  "name": "Vehicle Refueling",
