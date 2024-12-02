@@ -17,3 +17,4 @@ class VehicleDriver(Document):
 		if self.attach_driver_image:
 			fn = get_file_name(self.attach_driver_image,"-s-")
 			print(fn, self.attach_driver_image)
+		self.title = f'{self.driver_name} [{self.name}]'
