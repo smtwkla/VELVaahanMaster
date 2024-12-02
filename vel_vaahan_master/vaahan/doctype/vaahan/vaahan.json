@@ -11,8 +11,9 @@
   "model_variant",
   "chassis_number",
   "engine_number",
-  "color",
   "column_break_esmk",
+  "id_num",
+  "color",
   "registration_type",
   "current_owner",
   "green_tax_applicable",
@@ -293,6 +294,11 @@
   {
    "fieldname": "column_break_rzui",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "id_num",
+   "fieldtype": "Data",
+   "label": "Identification Number"
   }
  ],
  "image_field": "vaahan_image",
@@ -339,7 +345,7 @@
    "link_fieldname": "vaahan"
   }
  ],
- "modified": "2024-11-25 22:45:47.027020",
+ "modified": "2024-12-02 15:49:30.157812",
  "modified_by": "Administrator",
  "module": "Vaahan",
  "name": "Vaahan",

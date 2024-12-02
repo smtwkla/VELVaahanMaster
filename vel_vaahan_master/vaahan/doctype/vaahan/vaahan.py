@@ -179,7 +179,8 @@ class Vaahan(Document):
 
 	def set_title(self):
 		model_name = frappe.db.get_value('Vehicle Model', self.model, 'model')
-		self.title = f'{self.registration}-{model_name}'
+		id = f'-({self.id_num})' if self.id_num else ''
+		self.title = f'{self.registration}{id}-{model_name}'
 
 	def before_save(self):
 		self.set_title()
