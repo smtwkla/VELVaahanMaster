@@ -10,10 +10,10 @@ from frappe.model.document import Document
 
 class VehicleModel(Document):
 	def before_save(self):
-		self.payload = self.gvw - self.uvw
+		self.payload = (self.gvw - self.uvw) if self.gvw else 0
 
 	def check_weights(self):
-		if self.gvw < self.uvw:
+		if self.gvw and self.gvw < self.uvw:
 			frappe.throw("Vehicle gross weight cannot be lesser than unladen weight.")
 
 	def check_tyre_config(self):
