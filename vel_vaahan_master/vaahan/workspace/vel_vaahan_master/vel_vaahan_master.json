@@ -1,7 +1,7 @@
 {
  "app": "frappe",
  "charts": [],
- "content": "[{\"id\":\"wSYvQwItoN\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">VEL Vaahan Master</span>\",\"col\":12}},{\"id\":\"e2nv4iVdbH\",\"type\":\"card\",\"data\":{\"card_name\":\"Operations\",\"col\":4}},{\"id\":\"7tmCBczWmS\",\"type\":\"card\",\"data\":{\"card_name\":\"Legal Compliance\",\"col\":4}},{\"id\":\"NvSKU9e4qB\",\"type\":\"card\",\"data\":{\"card_name\":\"Vehicle Masters\",\"col\":4}},{\"id\":\"BDtbuPEo5C\",\"type\":\"card\",\"data\":{\"card_name\":\"Vehicle Maintenance\",\"col\":4}},{\"id\":\"r6eLyJi1Oh\",\"type\":\"card\",\"data\":{\"card_name\":\"Drivers\",\"col\":4}},{\"id\":\"bs9wuEO4-l\",\"type\":\"card\",\"data\":{\"card_name\":\"Other Masters\",\"col\":4}},{\"id\":\"D_jM0nI27Q\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"oMffTCbN06\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports</b></span>\",\"col\":12}},{\"id\":\"Hd0Lbgd6E9\",\"type\":\"card\",\"data\":{\"card_name\":\"Compliance Reports\",\"col\":4}},{\"id\":\"gDBqKRiBde\",\"type\":\"card\",\"data\":{\"card_name\":\"Vehicle Reports\",\"col\":4}}]",
+ "content": "[{\"id\":\"wSYvQwItoN\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">VEL Vaahan Master</span>\",\"col\":12}},{\"id\":\"AEF57M13Oe\",\"type\":\"card\",\"data\":{\"card_name\":\"Dashboards\",\"col\":4}},{\"id\":\"w2kTbsy3P_\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"e2nv4iVdbH\",\"type\":\"card\",\"data\":{\"card_name\":\"Operations\",\"col\":4}},{\"id\":\"7tmCBczWmS\",\"type\":\"card\",\"data\":{\"card_name\":\"Legal Compliance\",\"col\":4}},{\"id\":\"NvSKU9e4qB\",\"type\":\"card\",\"data\":{\"card_name\":\"Vehicle Masters\",\"col\":4}},{\"id\":\"BDtbuPEo5C\",\"type\":\"card\",\"data\":{\"card_name\":\"Vehicle Maintenance\",\"col\":4}},{\"id\":\"r6eLyJi1Oh\",\"type\":\"card\",\"data\":{\"card_name\":\"Drivers\",\"col\":4}},{\"id\":\"bs9wuEO4-l\",\"type\":\"card\",\"data\":{\"card_name\":\"Other Masters\",\"col\":4}},{\"id\":\"D_jM0nI27Q\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"oMffTCbN06\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports</b></span>\",\"col\":12}},{\"id\":\"Hd0Lbgd6E9\",\"type\":\"card\",\"data\":{\"card_name\":\"Compliance Reports\",\"col\":4}},{\"id\":\"gDBqKRiBde\",\"type\":\"card\",\"data\":{\"card_name\":\"Vehicle Reports\",\"col\":4}}]",
  "creation": "2024-11-13 00:24:10.826666",
  "custom_blocks": [],
  "docstatus": 0,
@@ -356,9 +356,28 @@
    "link_type": "Report",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Dashboards",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Goods Vehicle Operations",
+   "link_count": 0,
+   "link_to": "dashboard-view",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2024-11-29 22:44:45.057490",
+ "modified": "2024-12-04 07:05:53.138448",
  "modified_by": "Administrator",
  "module": "Vaahan",
  "name": "VEL Vaahan Master",
