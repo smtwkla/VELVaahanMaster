@@ -56,8 +56,8 @@ class PVTConditionEmail:
 			"message": self.get_message(),
 			"now": True,
 		}
-		#enqueue(method=frappe.sendmail, queue="short", timeout=300, is_async=True, **email_args)
-		pprint(email_args)
+		enqueue(method=frappe.sendmail, queue="short", timeout=300, is_async=True, **email_args)
+
 
 	def update_last_run(self):
 		settings = frappe.get_doc("Vaahan Settings")
@@ -76,15 +76,14 @@ class PVTConditionEmail:
 
 def daily():
 	last_run = frappe.get_doc("Vaahan Settings").trip_reported_till
-	day_next = add_to_date(last_run, days=1)
 
 	if not last_run:
 		last_run = "2024-01-01"
+	day_next = add_to_date(last_run, days=1)
+
 	yesterday = date.today() - timedelta(days=1)
 	run_cnt = 0
-	print(yesterday, day_next)
 	while date_diff(yesterday, day_next) >= 0:
-		print("running for ", day_next)
 		email = PVTConditionEmail(day_next)
 		email.run_report()
 		day_next = add_to_date(day_next, days=1)
