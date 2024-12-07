@@ -86,7 +86,7 @@ app_include_js = "/assets/vel_vaahan_master/js/vel_vaahan_master.js"
 # ------------
 
 # before_install = "vel_vaahan_master.install.before_install"
-# after_install = "vel_vaahan_master.install.after_install"
+after_install = "vel_vaahan_master.install.after_install"
 
 # Uninstallation
 # ------------

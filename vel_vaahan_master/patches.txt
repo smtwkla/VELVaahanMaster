@@ -3,5 +3,5 @@
 # Read docs to understand patches: https://frappeframework.com/docs/v14/user/en/database-migrations
 
 [post_model_sync]
-# Patches added in this section will be executed after doctypes are migrated
 vel_vaahan_master.patches.v0_1_22.update_driver_title
+vel_vaahan_master.vehicle_operations.doctype.passenger_vehicle_trip.tasks   #07-12-2024

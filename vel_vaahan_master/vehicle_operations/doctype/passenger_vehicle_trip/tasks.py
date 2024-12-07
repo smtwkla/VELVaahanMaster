@@ -91,3 +91,39 @@ def daily():
 		run_cnt += 1
 		if run_cnt > PVTConditionEmail.MAX_REPORT_RUNS_PER_DAY:
 			break
+
+def create_pv_trip_condition_email_template():
+	template = None
+	if not frappe.db.exists("Email Template", PVTConditionEmail.PV_TRIP_CONDITION_TEMPLATE):
+		template = frappe.get_doc(
+			{
+				"doctype": "Email Template",
+				"name": PVTConditionEmail.PV_TRIP_CONDITION_TEMPLATE,
+				"use_html": True,
+				"subject": "Passenger Vehicle Condition Feedback - {{ date_of_report }}",
+				"response_html": """
+<table>
+    <tr>
+        <th>Sl.</th>
+        <th>Vaahan</th>
+        <th>Driver</th>
+        <th>Start Condition</th>
+        <th>Remarks</th>
+    </tr>
+
+{% for item in remarks %}
+    <tr>
+        <td>{{ item.vaahan }}</td>
+        <td>{{ item.driver }}</td>
+        <td>{{ item.start_condition }}</td>
+        <td>{{ item.remarks }}</td>
+    </tr>
+{% endfor %}
+</table>
+""",
+			}
+		)
+		template.insert()
+
+def execute():
+	create_pv_trip_condition_email_template()
