@@ -68,6 +68,10 @@ class PassengerVehicleTrip(Document):
 				frappe.throw(f'End KM must be greater than Start / previous End KM: No. {seg.idx}')
 			prev_km = seg.end_km
 
+	def update_vaahan_odo(self):
+		max_odo = self.trip_segments[-1].end_km if not self.on_fixed_route else self.end_km
+		v = frappe.get_doc("Vaahan", self.vaahan)
+		v.update_odometer(max_odo)
 
 	def before_save(self):
 		self.sanitize_fields()
@@ -83,9 +87,7 @@ class PassengerVehicleTrip(Document):
 		self.validate_trip_segments()
 
 	def on_submit(self):
-		max_odo = self.trip_segments[-1].end_km if not self.on_fixed_route else self.end_km
-		v = frappe.get_doc("Vaahan", self.vaahan)
-		v.update_odometer(max_odo)
+		self.update_vaahan_odo()
 
 	def on_cancel(self):
 		v = frappe.get_doc("Vaahan", self.vaahan)
