@@ -154,7 +154,8 @@ scheduler_events = {
 # 		"vel_vaahan_master.tasks.all"
 # 	],
  	"daily": [
- 		"vel_vaahan_master.vaahan.doctype.vaahan.tasks.daily"
+ 		"vel_vaahan_master.vaahan.doctype.vaahan.tasks.daily",
+	    "vel_vaahan_master.vehicle_operations.doctype.passenger_vehicle_trip.tasks.daily"
  	],
 # 	"hourly": [
 # 		"vel_vaahan_master.tasks.hourly"
