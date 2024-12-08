@@ -1,3 +1,5 @@
+import datetime
+
 import frappe
 from frappe.model.docstatus import DocStatus
 from frappe.utils.background_jobs import enqueue
@@ -38,7 +40,7 @@ class PVTConditionEmail:
 				driver = frappe.db.get_value("Vehicle Driver", trip.driver, "driver_name")
 				vah = frappe.db.get_value("Vaahan", trip.vaahan, "title")
 				self.remarks.append(
-					{"trip_date": trip.start_datetime, "vaahan": vah, "driver": driver, "start_condition": trip.start_condition,
+					{"trip_date": trip.start_datetime.strftime('%d-%m-%Y'), "vaahan": vah, "driver": driver, "start_condition": trip.start_condition,
 					 "end_condition": trip.end_condition})
 
 	def get_subject(self):
