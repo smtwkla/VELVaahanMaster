@@ -3,7 +3,6 @@ from frappe.model.docstatus import DocStatus
 from frappe.utils.background_jobs import enqueue
 from frappe.utils import add_to_date, date_diff
 
-from pprint import pprint
 from datetime import date, timedelta
 
 
@@ -79,6 +78,7 @@ class PVTConditionEmail:
 		self.update_last_run()
 
 def daily():
+	# run from hooks.py : scheduler_events : daily
 	last_run = frappe.get_doc("Vaahan Settings").trip_reported_till
 
 	if not last_run:
@@ -92,11 +92,10 @@ def daily():
 		email.run_report()
 		day_next = add_to_date(day_next, days=1)
 		run_cnt += 1
-		if run_cnt > PVTConditionEmail.MAX_REPORT_RUNS_PER_DAY:
+		if run_cnt >= PVTConditionEmail.MAX_REPORT_RUNS_PER_DAY:
 			break
 
 def create_pv_trip_condition_email_template():
-	template = None
 	if not frappe.db.exists("Email Template", PVTConditionEmail.PV_TRIP_CONDITION_TEMPLATE):
 		template = frappe.get_doc(
 			{
@@ -132,4 +131,5 @@ def create_pv_trip_condition_email_template():
 		template.insert()
 
 def execute():
+	# called from patches.txt for migrate
 	create_pv_trip_condition_email_template()
