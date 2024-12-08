@@ -64,9 +64,12 @@ class PassengerVehicleTrip(Document):
 
 		prev_km = self.start_km
 		for seg in self.trip_segments:
-			if seg.end_km and prev_km and prev_km >= seg.end_km:
+			if seg.end_km and prev_km and prev_km > seg.end_km:
 				frappe.throw(f'End KM must be greater than Start / previous End KM: No. {seg.idx}')
 			prev_km = seg.end_km
+
+		if self.total_km <= 0:
+			frappe.throw('Total KM must be greater than 0.')
 
 	def update_vaahan_odo(self):
 		max_odo = self.trip_segments[-1].end_km if not self.on_fixed_route else self.end_km
