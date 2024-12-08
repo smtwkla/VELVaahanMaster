@@ -25,6 +25,7 @@
   "end_km",
   "end_datetime",
   "section_break_culi",
+  "end_condition",
   "remarks",
   "calculated_details_section",
   "total_km",
@@ -88,7 +89,7 @@
   {
    "fieldname": "remarks",
    "fieldtype": "Small Text",
-   "label": "Remarks (End Vehicle Condition)"
+   "label": "Remarks"
   },
   {
    "fieldname": "total_km",
@@ -205,12 +206,18 @@
   {
    "fieldname": "column_break_zlxu",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "end_condition",
+   "fieldtype": "Small Text",
+   "label": "End Vehicle Condition",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-12-07 20:20:19.578311",
+ "modified": "2024-12-08 09:48:01.060374",
  "modified_by": "Administrator",
  "module": "Vehicle Operations",
  "name": "Passenger Vehicle Trip",

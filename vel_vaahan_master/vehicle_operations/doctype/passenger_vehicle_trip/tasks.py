@@ -18,6 +18,10 @@ class PVTConditionEmail:
 		self.date_of_report = date_of_report
 		self.email_template = frappe.get_doc("Email Template", self.PV_TRIP_CONDITION_TEMPLATE)
 
+	@staticmethod
+	def condition_text_present(txt):
+		return txt.strip().lower().replace(".", "") != "ok"
+
 	def load_trips(self):
 		dt_start = self.date_of_report + ' 00:00:00'
 		dt_end = self.date_of_report + ' 23:59:59.999999'
@@ -30,13 +34,13 @@ class PVTConditionEmail:
 
 		for trip_name in trips:
 			trip = frappe.get_doc("Passenger Vehicle Trip", trip_name)
-			cond: str = trip.start_condition.strip().lower().replace(".", "")
-			if cond != "ok":
+			if (self.condition_text_present(trip.start_condition) or
+					self.condition_text_present(trip.end_condition)):
 				driver = frappe.db.get_value("Vehicle Driver", trip.driver, "driver_name")
 				vah = frappe.db.get_value("Vaahan", trip.vaahan, "title")
 				self.remarks.append(
 					{"vaahan": vah, "driver": driver, "start_condition": trip.start_condition,
-					 "remarks": trip.remarks})
+					 "end_condition": trip.end_condition})
 
 	def get_subject(self):
 		return self.email_template.get_formatted_subject({"date_of_report":self.date_of_report})
@@ -107,7 +111,7 @@ def create_pv_trip_condition_email_template():
         <th>Vaahan</th>
         <th>Driver</th>
         <th>Start Condition</th>
-        <th>Remarks</th>
+        <th>End Condition</th>
     </tr>
 
 {% for item in remarks %}
@@ -115,7 +119,7 @@ def create_pv_trip_condition_email_template():
         <td>{{ item.vaahan }}</td>
         <td>{{ item.driver }}</td>
         <td>{{ item.start_condition }}</td>
-        <td>{{ item.remarks }}</td>
+        <td>{{ item.end_condition }}</td>
     </tr>
 {% endfor %}
 </table>
