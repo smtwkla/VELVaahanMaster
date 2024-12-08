@@ -39,7 +39,7 @@ class PVTConditionEmail:
 				driver = frappe.db.get_value("Vehicle Driver", trip.driver, "driver_name")
 				vah = frappe.db.get_value("Vaahan", trip.vaahan, "title")
 				self.remarks.append(
-					{"vaahan": vah, "driver": driver, "start_condition": trip.start_condition,
+					{"trip_date": trip.start_datetime, "vaahan": vah, "driver": driver, "start_condition": trip.start_condition,
 					 "end_condition": trip.end_condition})
 
 	def get_subject(self):
@@ -108,6 +108,7 @@ def create_pv_trip_condition_email_template():
 <table>
     <tr>
         <th>Sl.</th>
+        <th>Trip Date</th>
         <th>Vaahan</th>
         <th>Driver</th>
         <th>Start Condition</th>
@@ -116,6 +117,8 @@ def create_pv_trip_condition_email_template():
 
 {% for item in remarks %}
     <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ item.trip_date }}</td>
         <td>{{ item.vaahan }}</td>
         <td>{{ item.driver }}</td>
         <td>{{ item.start_condition }}</td>
