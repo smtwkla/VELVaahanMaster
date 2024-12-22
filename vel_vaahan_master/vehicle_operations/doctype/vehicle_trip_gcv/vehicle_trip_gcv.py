@@ -31,13 +31,18 @@ class VehicleTripGCV(Document):
 				if seg.end_km <= self.start_km:
 					frappe.throw("End Km of Trip Segment No. {} must be greater than start Km".format(
 									seg.idx))
-		def check_overlap(km):
+		def check_overlap(km, km2=None):
 			"""Returns conflicting trip if exists, else None."""
+			if not km2:
+				boundary_condition = f"AND start_km < {km} AND (vtg.start_km + vtg.total_km) > {km}"
+			else:
+				boundary_condition = f"AND start_km > {km} AND (vtg.start_km + vtg.total_km) < {km2}"
+
 			csql = f"""
 			SELECT vtg.name
 	            FROM `tabVehicle Trip GCV` vtg
 	            WHERE vtg.vaahan ='{self.vaahan}'
-	            AND start_km < {km} AND (vtg.start_km + vtg.total_km) > {km}
+	            {boundary_condition}
 	            AND vtg.docstatus = 1;
 			"""
 			res = frappe.db.sql(csql)
@@ -53,8 +58,13 @@ class VehicleTripGCV(Document):
 			if conflicting_trip:=check_overlap(end_km):
 				frappe.throw(
 					f"Trip end Km {end_km} is within the range of completed trip {conflicting_trip}.")
+			if conflicting_trip:=check_overlap(self.start_km, end_km):
+				frappe.throw(
+					f"Trip odometer range is conflicts with the range of completed trip {conflicting_trip}.")
 		except ValueError:
 			pass
+
+
 
 	def validate_trip_details_for_submit(self):
 		if not [s.idx for s in self.trip_segments if s.seg_type == 'Travel To']:
