@@ -64,7 +64,8 @@ class VehicleTripGCV(Document):
 		except ValueError:
 			pass
 
-
+	def validate_odo_for_continuity(self):
+		pass
 
 	def validate_trip_details_for_submit(self):
 		if not [s.idx for s in self.trip_segments if s.seg_type == 'Travel To']:
@@ -149,6 +150,7 @@ class VehicleTripGCV(Document):
 
 	def before_submit(self):
 		self.validate_trip_details_for_submit()
+		self.validate_odo_for_continuity()
 
 	def on_submit(self):
 		max_odo = max([s.end_km for s in self.trip_segments if s.seg_type == 'Travel To'])

@@ -1,4 +1,4 @@
-from vel_vaahan_master.vehicle_operations.doctype.passenger_vehicle_trip.tasks import \
+from vel_vaahan_master.vehicle_operations.doctype.passenger_vehicle_trip.pvt_tasks import \
 	create_pv_trip_condition_email_template
 
 create_pv_trip_condition_email_template()
