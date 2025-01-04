@@ -6,7 +6,9 @@ app_email = "kla@smtw.in"
 app_license = "mit"
 app_logo_url = "/assets/vel_vaahan_master/images/icon.svg"
 
+# Customisations
 write_file = "vel_vaahan_master.overrides.file_handler.write_file"
+email_css = ["v-email.bundle.css"]
 
 # Apps
 # ------------------
