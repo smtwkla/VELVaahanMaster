@@ -61,13 +61,14 @@ class PVTConditionEmail:
 			"message": self.get_message(),
 			"now": True,
 		}
-		enqueue(method=frappe.sendmail, queue="short", timeout=300, is_async=True, **email_args)
+		frappe.sendmail(**email_args)
 
 
 	def update_last_run(self):
-		settings = frappe.get_doc("Vaahan Settings")
-		settings.trip_reported_till = self.date_of_report
-		settings.save()
+		settings = frappe.get_doc("Vaahan Settings", "Vaahan Settings")
+		# settings.trip_reported_till = self.date_of_report
+		settings.db_set('trip_reported_till', self.date_of_report)
+		# settings.save()
 
 	def run_report(self):
 		self.load_recipients()
