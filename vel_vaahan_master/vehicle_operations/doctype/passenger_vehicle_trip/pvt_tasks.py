@@ -67,8 +67,10 @@ class PVTConditionEmail:
 	def update_last_run(self):
 		settings = frappe.get_doc("Vaahan Settings", "Vaahan Settings")
 		# settings.trip_reported_till = self.date_of_report
-		settings.db_set('trip_reported_till', self.date_of_report)
 		# settings.save()
+		settings.db_set('trip_reported_till', self.date_of_report)
+		frappe.db.commit()
+
 
 	def run_report(self):
 		self.load_recipients()
