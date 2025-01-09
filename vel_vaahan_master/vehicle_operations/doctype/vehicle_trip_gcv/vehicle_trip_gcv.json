@@ -17,6 +17,9 @@
   "start_from",
   "section_break_lwdx",
   "trip_segments",
+  "other_details_section",
+  "vehicle_condition",
+  "remarks",
   "sb_trip_calc_det",
   "loading_time",
   "travel_time",
@@ -25,8 +28,7 @@
   "column_break_doeg",
   "total_freight",
   "total_km",
-  "other_details_section",
-  "remarks",
+  "section_break_xlyh",
   "amended_from"
  ],
  "fields": [
@@ -169,13 +171,23 @@
   {
    "fieldname": "column_break_doeg",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vehicle_condition",
+   "fieldtype": "Small Text",
+   "label": "Vehicle Condition",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_xlyh",
+   "fieldtype": "Section Break"
   }
  ],
  "icon": "fa fa-truck",
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-12-02 21:25:33.254825",
+ "modified": "2025-01-09 08:14:42.149928",
  "modified_by": "Administrator",
  "module": "Vehicle Operations",
  "name": "Vehicle Trip GCV",
